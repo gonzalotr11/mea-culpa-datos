@@ -1,0 +1,886 @@
+﻿id_episodio,tema,orden
+temporada_01_cap01,exilio político,1
+temporada_01_cap01,ideología marxista,2
+temporada_01_cap01,caída del socialismo real,3
+temporada_01_cap01,lucha armada,4
+temporada_01_cap01,desorientación generacional,5
+temporada_01_cap01,redención carcelaria,6
+temporada_01_cap01,amor y compromiso,7
+temporada_01_cap01,crisis de identidad,8
+temporada_01_cap01,marginalidad política,9
+temporada_01_cap02,violencia sexual,1
+temporada_01_cap02,error judicial,2
+temporada_01_cap02,estigma social,3
+temporada_01_cap02,machismo,4
+temporada_01_cap02,sistema carcelario,5
+temporada_01_cap02,prevención del delito,6
+temporada_01_cap03,alcoholismo,1
+temporada_01_cap03,violencia intrafamiliar,2
+temporada_01_cap03,pobreza,3
+temporada_01_cap03,código de silencio,4
+temporada_01_cap03,culpa religiosa,5
+temporada_01_cap03,impunidad,6
+temporada_01_cap03,prescripción penal,7
+temporada_01_cap03,cesantía política,8
+temporada_01_cap04,secuestro,1
+temporada_01_cap04,codicia,2
+temporada_01_cap04,dinero fácil,3
+temporada_01_cap04,familia,4
+temporada_01_cap04,trauma infantil,5
+temporada_01_cap04,cárcel,6
+temporada_01_cap04,perdón,7
+temporada_01_cap04,justicia,8
+temporada_01_cap04,arrepentimiento,9
+temporada_01_cap05,infidelidad,1
+temporada_01_cap05,celos,2
+temporada_01_cap05,migración campo-ciudad,3
+temporada_01_cap05,pobreza,4
+temporada_01_cap05,soledad,5
+temporada_01_cap05,suicidio,6
+temporada_01_cap05,arrepentimiento,7
+temporada_01_cap06,pobreza,1
+temporada_01_cap06,delincuencia_juvenil,2
+temporada_01_cap06,rehabilitación,3
+temporada_01_cap06,liderazgo_comunitario,4
+temporada_01_cap06,pérdida_de_hijos,5
+temporada_01_cap06,marginalidad,6
+temporada_01_cap06,redención,7
+temporada_01_cap07,obsesión amorosa,1
+temporada_01_cap07,codicia,2
+temporada_01_cap07,robo,3
+temporada_01_cap07,traición,4
+temporada_01_cap07,consumismo,5
+temporada_01_cap07,prisión,6
+temporada_01_cap07,familia_fracturada,7
+temporada_01_cap08,narcotráfico,1
+temporada_01_cap08,pobreza,2
+temporada_01_cap08,enfermedad infantil,3
+temporada_01_cap08,familia,4
+temporada_01_cap08,prisión,5
+temporada_01_cap08,reclutamiento de burreros,6
+temporada_01_cap08,Pablo Escobar,7
+temporada_01_cap08,adicción,8
+temporada_01_cap09,pobreza,1
+temporada_01_cap09,abandono infantil,2
+temporada_01_cap09,abuso sexual infantil,3
+temporada_01_cap09,cárcel como escuela del delito,4
+temporada_01_cap09,rehabilitación,5
+temporada_01_cap09,delincuencia habitual,6
+temporada_01_cap09,marginalidad urbana,7
+temporada_01_cap10,identidad de género,1
+temporada_01_cap10,homosexualidad,2
+temporada_01_cap10,maternidad frustrada,3
+temporada_01_cap10,marginalidad social,4
+temporada_01_cap10,sistema carcelario,5
+temporada_01_cap10,pobreza,6
+temporada_01_cap11,infidelidad,1
+temporada_01_cap11,violencia_intrafamiliar,2
+temporada_01_cap11,alcoholismo,3
+temporada_01_cap11,crimen_pasional,4
+temporada_01_cap11,maternidad_en_prision,5
+temporada_01_cap11,orfandad,6
+temporada_01_cap12,marginalidad,1
+temporada_01_cap12,abuso_de_poder,2
+temporada_01_cap12,justicia_por_mano_propia,3
+temporada_01_cap12,pobreza,4
+temporada_01_cap12,impunidad,5
+temporada_01_cap12,pacto_de_silencio,6
+temporada_01_cap12,arrepentimiento_carcelario,7
+temporada_02_cap01,pobreza,1
+temporada_02_cap01,alcoholismo,2
+temporada_02_cap01,matrimonio_forzado,3
+temporada_02_cap01,violencia_intrafamiliar,4
+temporada_02_cap01,abandono,5
+temporada_02_cap01,rehabilitacion_carcelaria,6
+temporada_02_cap01,maternidad,7
+temporada_02_cap02,fanatismo_religioso,1
+temporada_02_cap02,exorcismo,2
+temporada_02_cap02,pobreza_rural,3
+temporada_02_cap02,psicosis_colectiva,4
+temporada_02_cap02,creencias_populares,5
+temporada_02_cap02,justicia_y_locura,6
+temporada_02_cap03,aborto_clandestino,1
+temporada_02_cap03,ejercicio_ilegal_de_la_medicina,2
+temporada_02_cap03,encubrimiento,3
+temporada_02_cap03,falsificación_de_documentos,4
+temporada_02_cap03,marginalidad_médica,5
+temporada_02_cap03,prensa_y_escándalo,6
+temporada_02_cap03,duelo_familiar,7
+temporada_02_cap04,pobreza,1
+temporada_02_cap04,abandono paterno,2
+temporada_02_cap04,delincuencia juvenil,3
+temporada_02_cap04,sistema carcelario,4
+temporada_02_cap04,rehabilitación,5
+temporada_02_cap04,hacinamiento penitenciario,6
+temporada_02_cap04,teatro carcelario,7
+temporada_02_cap04,drogas,8
+temporada_02_cap04,estigmatización,9
+temporada_02_cap05,venganza,1
+temporada_02_cap05,migración,2
+temporada_02_cap05,fronteras,3
+temporada_02_cap05,violencia,4
+temporada_02_cap05,justicia,5
+temporada_02_cap05,pena_de_muerte,6
+temporada_02_cap05,amor_juvenil,7
+temporada_02_cap05,marginalidad,8
+temporada_02_cap06,prostitución infantil,1
+temporada_02_cap06,pobreza,2
+temporada_02_cap06,marginalidad,3
+temporada_02_cap06,VIH/sida,4
+temporada_02_cap06,identidad transgénero,5
+temporada_02_cap06,abuso sexual infantil,6
+temporada_02_cap06,explotación sexual,7
+temporada_02_cap06,delincuencia juvenil,8
+temporada_02_cap07,pobreza,1
+temporada_02_cap07,abandono_infantil,2
+temporada_02_cap07,salud_mental,3
+temporada_02_cap07,violencia_contra_mujeres,4
+temporada_02_cap07,machismo,5
+temporada_02_cap07,alcoholismo_parental,6
+temporada_02_cap07,justicia_policial,7
+temporada_02_cap08,pobreza,1
+temporada_02_cap08,abandono,2
+temporada_02_cap08,orfandad,3
+temporada_02_cap08,suicidio adolescente,4
+temporada_02_cap08,amor no correspondido,5
+temporada_02_cap08,desigualdad social,6
+temporada_02_cap08,analfabetismo,7
+temporada_02_cap09,sida,1
+temporada_02_cap09,isapres,2
+temporada_02_cap09,corrupcion_medica,3
+temporada_02_cap09,soledad,4
+temporada_02_cap09,familia_distante,5
+temporada_02_cap09,enfermedad_terminal,6
+temporada_02_cap09,amistad,7
+temporada_03_cap01,pobreza,1
+temporada_03_cap01,drogas,2
+temporada_03_cap01,fútbol,3
+temporada_03_cap01,solidaridad comunitaria,4
+temporada_03_cap01,discapacidad,5
+temporada_03_cap01,delincuencia juvenil,6
+temporada_03_cap01,rehabilitación,7
+temporada_03_cap02,pobreza,1
+temporada_03_cap02,marginalidad,2
+temporada_03_cap02,delincuencia_juvenil,3
+temporada_03_cap02,narcotrafico,4
+temporada_03_cap02,rehabilitacion_penitenciaria,5
+temporada_03_cap02,mediatizacion_del_crimen,6
+temporada_03_cap02,abandono_paterno,7
+temporada_03_cap03,pobreza,1
+temporada_03_cap03,madre_soltera,2
+temporada_03_cap03,error_judicial,3
+temporada_03_cap03,tortura_policial,4
+temporada_03_cap03,abuso_intrafamiliar,5
+temporada_03_cap03,marginalidad,6
+temporada_03_cap03,justicia_colapsada,7
+temporada_03_cap04,corrupción estatal,1
+temporada_03_cap04,aparato represivo,2
+temporada_03_cap04,abuso de poder,3
+temporada_03_cap04,codicia,4
+temporada_03_cap04,impunidad,5
+temporada_03_cap04,violencia política,6
+temporada_03_cap05,terrorismo,1
+temporada_03_cap05,violencia_política,2
+temporada_03_cap05,fanatismo,3
+temporada_03_cap05,guerra_fría,4
+temporada_03_cap05,magnicidio,5
+temporada_03_cap05,revolución,6
+temporada_03_cap05,pobreza_rural,7
+temporada_03_cap05,arrepentimiento,8
+temporada_03_cap05,religión,9
+temporada_03_cap06,infidelidad,1
+temporada_03_cap06,celos,2
+temporada_03_cap06,obsesión,3
+temporada_03_cap06,violencia_de_genero,4
+temporada_03_cap06,fuga,5
+temporada_03_cap06,clase_media,6
+temporada_03_cap06,engaño,7
+temporada_03_cap07,narcotrafico,1
+temporada_03_cap07,corrupcion,2
+temporada_03_cap07,indulto_presidencial,3
+temporada_03_cap07,ambicion,4
+temporada_03_cap07,deudas,5
+temporada_03_cap07,familia,6
+temporada_03_cap07,cartel_de_medellin,7
+temporada_03_cap08,dictadura,1
+temporada_03_cap08,corrupción policial,2
+temporada_03_cap08,violencia de estado,3
+temporada_03_cap08,derechos_humanos,4
+temporada_03_cap08,traición,5
+temporada_03_cap08,codicia,6
+temporada_03_cap08,justicia,7
+temporada_03_cap08,memoria histórica,8
+temporada_03_cap09,incesto,1
+temporada_03_cap09,drogas,2
+temporada_03_cap09,psicopatia,3
+temporada_03_cap09,obsesion_amorosa,4
+temporada_03_cap09,estafa,5
+temporada_03_cap09,carcel,6
+temporada_03_cap09,rehabilitacion,7
+temporada_03_cap09,amor_carcelario,8
+temporada_03_cap10,terrorismo_politico,1
+temporada_03_cap10,guerra_fria,2
+temporada_03_cap10,revolucion_cubana,3
+temporada_03_cap10,izquierda_chilena,4
+temporada_03_cap10,pobreza,5
+temporada_03_cap10,violencia_armada,6
+temporada_03_cap10,asesinato_politico,7
+temporada_03_cap10,clandestinidad,8
+temporada_03_cap11,violencia_intrafamiliar,1
+temporada_03_cap11,celos,2
+temporada_03_cap11,control_machista,3
+temporada_03_cap11,impunidad_policial,4
+temporada_03_cap11,enfermedad_terminal,5
+temporada_03_cap11,abandono,6
+temporada_04_cap01,psicopatia,1
+temporada_04_cap01,adiccion_drogas,2
+temporada_04_cap01,estafa,3
+temporada_04_cap01,abuso_sexual_infantil,4
+temporada_04_cap01,migracion,5
+temporada_04_cap01,fiestas_patrias,6
+temporada_04_cap01,engaño_matrimonial,7
+temporada_04_cap02,adopción,1
+temporada_04_cap02,alcoholismo,2
+temporada_04_cap02,drogadicción,3
+temporada_04_cap02,abandono,4
+temporada_04_cap02,discapacidad,5
+temporada_04_cap02,negligencia paterna,6
+temporada_04_cap02,herencia,7
+temporada_04_cap02,enfermedad terminal,8
+temporada_04_cap03,pobreza,1
+temporada_04_cap03,analfabetismo,2
+temporada_04_cap03,abandono_paterno,3
+temporada_04_cap03,alcoholismo,4
+temporada_04_cap03,criminalidad,5
+temporada_04_cap03,frontera,6
+temporada_04_cap03,contrabando_de_vehiculos,7
+temporada_04_cap03,rehabilitacion,8
+temporada_04_cap04,retorno del exilio,1
+temporada_04_cap04,adaptación cultural,2
+temporada_04_cap04,pandillas juveniles,3
+temporada_04_cap04,discriminación,4
+temporada_04_cap04,impunidad,5
+temporada_04_cap04,marginalidad,6
+temporada_04_cap04,alcohol y drogas,7
+temporada_04_cap04,pobreza urbana,8
+temporada_04_cap05,autoridad paterna,1
+temporada_04_cap05,celos,2
+temporada_04_cap05,marginalidad rural,3
+temporada_04_cap05,trabajo infantil/juvenil,4
+temporada_04_cap05,rehabilitación carcelaria,5
+temporada_04_cap05,justicia y víctimas,6
+temporada_04_cap06,celos,1
+temporada_04_cap06,violencia_de_genero,2
+temporada_04_cap06,ruralidad_mapuche,3
+temporada_04_cap06,pobreza,4
+temporada_04_cap06,masculinidad_posesiva,5
+temporada_04_cap06,alcohol,6
+temporada_04_cap06,obsesion_amorosa,7
+temporada_04_cap07,violencia_intrafamiliar,1
+temporada_04_cap07,abuso_sexual,2
+temporada_04_cap07,impunidad,3
+temporada_04_cap07,pobreza,4
+temporada_04_cap07,machismo,5
+temporada_04_cap07,vergüenza_social,6
+temporada_04_cap07,justicia_por_mano_propia,7
+temporada_04_cap08,pobreza,1
+temporada_04_cap08,maltrato infantil,2
+temporada_04_cap08,orfandad,3
+temporada_04_cap08,marginalidad,4
+temporada_04_cap08,sistema judicial fallido,5
+temporada_04_cap08,machismo,6
+temporada_04_cap08,salud mental,7
+temporada_04_cap09,analfabetismo,1
+temporada_04_cap09,pobreza rural,2
+temporada_04_cap09,migración campo-ciudad,3
+temporada_04_cap09,celos laborales,4
+temporada_04_cap09,marginalidad,5
+temporada_04_cap09,maternidad sacrificial,6
+temporada_04_cap09,abandono infantil,7
+temporada_04_cap10,clasismo,1
+temporada_04_cap10,embarazo_no_deseado,2
+temporada_04_cap10,envenenamiento,3
+temporada_04_cap10,justicia_tardia,4
+temporada_04_cap10,impunidad,5
+temporada_04_cap10,desigualdad_social,6
+temporada_04_cap10,familia,7
+temporada_05_cap01,pobreza,1
+temporada_05_cap01,abuso_infantil,2
+temporada_05_cap01,matrimonio_forzado,3
+temporada_05_cap01,delincuencia,4
+temporada_05_cap01,violencia_intrafamiliar,5
+temporada_05_cap01,culpa,6
+temporada_05_cap01,encierro,7
+temporada_05_cap02,pobreza,1
+temporada_05_cap02,ruralidad,2
+temporada_05_cap02,honor familiar,3
+temporada_05_cap02,embarazo adolescente,4
+temporada_05_cap02,negligencia,5
+temporada_05_cap02,encubrimiento,6
+temporada_05_cap02,machismo,7
+temporada_05_cap02,infanticidio,8
+temporada_05_cap02,abandono,9
+temporada_05_cap03,suicidio,1
+temporada_05_cap03,pobreza,2
+temporada_05_cap03,cesantia,3
+temporada_05_cap03,sequia,4
+temporada_05_cap03,satanismo_rumoreado,5
+temporada_05_cap03,abandono_paterno,6
+temporada_05_cap03,embarazo_adolescente,7
+temporada_05_cap03,alcoholismo,8
+temporada_05_cap03,falta_de_oportunidades,9
+temporada_05_cap04,pobreza,1
+temporada_05_cap04,educación,2
+temporada_05_cap04,becas,3
+temporada_05_cap04,salud mental,4
+temporada_05_cap04,esquizofrenia,5
+temporada_05_cap04,sistema judicial,6
+temporada_05_cap04,suicidio,7
+temporada_05_cap04,movilidad social,8
+temporada_05_cap05,psicopatía,1
+temporada_05_cap05,pobreza,2
+temporada_05_cap05,explotación sexual,3
+temporada_05_cap05,filicidio,4
+temporada_05_cap05,enfermedad mental,5
+temporada_05_cap05,violencia intrafamiliar,6
+temporada_05_cap05,paidofilia,7
+temporada_05_cap05,misoginia,8
+temporada_05_cap05,religión,9
+temporada_05_cap06,drogas,1
+temporada_05_cap06,pobreza_moral,2
+temporada_05_cap06,fama,3
+temporada_05_cap06,familia,4
+temporada_05_cap06,deporte,5
+temporada_05_cap06,pérdida_material,6
+temporada_05_cap06,redención,7
+temporada_05_cap06,adicción,8
+temporada_05_cap07,violencia intrafamiliar,1
+temporada_05_cap07,alcoholismo,2
+temporada_05_cap07,pobreza,3
+temporada_05_cap07,incesto,4
+temporada_05_cap07,embarazo infantil,5
+temporada_05_cap07,ciclo de violencia transgeneracional,6
+temporada_05_cap07,machismo,7
+temporada_05_cap08,violencia_intrafamiliar,1
+temporada_05_cap08,diferencia_de_edad,2
+temporada_05_cap08,alcoholismo,3
+temporada_05_cap08,drogadiccion,4
+temporada_05_cap08,machismo,5
+temporada_05_cap08,pobreza,6
+temporada_05_cap08,complicidad_femenina,7
+temporada_05_cap08,ocultamiento_de_cadaver,8
+temporada_05_cap09,pobreza,1
+temporada_05_cap09,abandono paterno,2
+temporada_05_cap09,drogadicción,3
+temporada_05_cap09,alcoholismo,4
+temporada_05_cap09,delincuencia juvenil,5
+temporada_05_cap09,armas de fuego,6
+temporada_05_cap09,cárcel,7
+temporada_05_cap09,familia disfuncional,8
+temporada_05_cap10,cuatrerismo,1
+temporada_05_cap10,psicopatía,2
+temporada_05_cap10,impunidad,3
+temporada_05_cap10,ruralidad,4
+temporada_05_cap10,desaparición forzada,5
+temporada_05_cap10,violencia intrafamiliar,6
+temporada_05_cap11,fanatismo_religioso,1
+temporada_05_cap11,brujeria,2
+temporada_05_cap11,ruralidad,3
+temporada_05_cap11,pobreza,4
+temporada_05_cap11,salud_mental,5
+temporada_05_cap11,exorcismo,6
+temporada_05_cap11,creencias_populares,7
+temporada_05_cap12,pobreza,1
+temporada_05_cap12,abandono paterno,2
+temporada_05_cap12,marginalidad,3
+temporada_05_cap12,prisión injusta,4
+temporada_05_cap12,drogas,5
+temporada_05_cap12,fuga,6
+temporada_05_cap12,familia disfuncional,7
+temporada_05_cap12,migración interna,8
+temporada_05_cap13,pobreza rural,1
+temporada_05_cap13,violencia intrafamiliar,2
+temporada_05_cap13,abuso sexual,3
+temporada_05_cap13,matrimonio forzado,4
+temporada_05_cap13,alcoholismo,5
+temporada_05_cap13,analfabetismo,6
+temporada_05_cap13,maternidad,7
+temporada_05_cap13,impunidad,8
+temporada_06_cap01,incesto,1
+temporada_06_cap01,violencia_intrafamiliar,2
+temporada_06_cap01,abuso_sexual_infantil,3
+temporada_06_cap01,filicidio,4
+temporada_06_cap01,machismo,5
+temporada_06_cap01,pobreza,6
+temporada_06_cap01,secreto_familiar,7
+temporada_06_cap02,pobreza rural,1
+temporada_06_cap02,aislamiento,2
+temporada_06_cap02,psicopatía,3
+temporada_06_cap02,abuso sexual infantil,4
+temporada_06_cap02,venganza,5
+temporada_06_cap02,justicia tardía,6
+temporada_06_cap02,alcoholismo,7
+temporada_06_cap02,marginalidad rural,8
+temporada_06_cap02,misticismo del valle del elqui,9
+temporada_06_cap03,justicia,1
+temporada_06_cap03,corrupción judicial,2
+temporada_06_cap03,narcotráfico,3
+temporada_06_cap03,delación compensada,4
+temporada_06_cap03,familia,5
+temporada_06_cap03,encarcelamiento injusto,6
+temporada_06_cap03,movilidad social,7
+temporada_06_cap04,ciclo de violencia intergeneracional,1
+temporada_06_cap04,maltrato infantil,2
+temporada_06_cap04,depresión postparto,3
+temporada_06_cap04,pobreza rural,4
+temporada_06_cap04,abandono materno,5
+temporada_06_cap04,crianza por abuelos,6
+temporada_06_cap05,herencia_de_tierras,1
+temporada_06_cap05,rivalidad_familiar,2
+temporada_06_cap05,alcohol,3
+temporada_06_cap05,codigo_de_honor_rural,4
+temporada_06_cap05,violencia_rural,5
+temporada_06_cap05,futbol_campesino,6
+temporada_06_cap05,procesion_religiosa,7
+temporada_06_cap05,justicia_por_mano_propia,8
+temporada_06_cap06,enfermedad mental,1
+temporada_06_cap06,abandono,2
+temporada_06_cap06,celos patológicos,3
+temporada_06_cap06,custodia infantil,4
+temporada_06_cap06,violencia intrafamiliar,5
+temporada_06_cap06,pobreza,6
+temporada_06_cap07,enfermedad mental,1
+temporada_06_cap07,esquizofrenia,2
+temporada_06_cap07,pobreza,3
+temporada_06_cap07,marginalidad,4
+temporada_06_cap07,maternidad,5
+temporada_06_cap07,negligencia institucional,6
+temporada_06_cap07,alcohol,7
+temporada_06_cap07,sistema judicial,8
+temporada_06_cap08,endeudamiento,1
+temporada_06_cap08,infidelidad,2
+temporada_06_cap08,precariedad_academica,3
+temporada_06_cap08,estatus_social,4
+temporada_06_cap08,suicidio,5
+temporada_06_cap08,alcoholismo,6
+temporada_06_cap08,presion_social,7
+temporada_07_cap01,infertilidad,1
+temporada_07_cap01,embarazo psicológico,2
+temporada_07_cap01,engaño,3
+temporada_07_cap01,obsesión,4
+temporada_07_cap01,maternidad,5
+temporada_07_cap01,violencia_contra_la_mujer,6
+temporada_07_cap01,salud_mental,7
+temporada_07_cap02,psicopatia,1
+temporada_07_cap02,complejo_de_edipo,2
+temporada_07_cap02,violencia_intrafamiliar,3
+temporada_07_cap02,aislamiento_rural,4
+temporada_07_cap02,pena_de_muerte,5
+temporada_07_cap02,marginalidad_rural,6
+temporada_07_cap02,asesino_serial,7
+temporada_07_cap03,pobreza,1
+temporada_07_cap03,fanatismo_religioso,2
+temporada_07_cap03,abuso_sexual,3
+temporada_07_cap03,violencia_intrafamiliar,4
+temporada_07_cap03,negligencia_estatal,5
+temporada_07_cap03,marginalidad,6
+temporada_07_cap03,maternidad_sometida,7
+temporada_07_cap03,control_religioso,8
+temporada_07_cap04,pobreza,1
+temporada_07_cap04,violencia_intrafamiliar,2
+temporada_07_cap04,abandono_paterno,3
+temporada_07_cap04,drogas,4
+temporada_07_cap04,marginalidad,5
+temporada_07_cap04,carcel,6
+temporada_07_cap04,reinsercion_social,7
+temporada_08_cap01,inmigración palestina,1
+temporada_08_cap01,avaricia,2
+temporada_08_cap01,fraude notarial,3
+temporada_08_cap01,matrimonio forzado,4
+temporada_08_cap01,pena de muerte,5
+temporada_08_cap01,cuatrerismo,6
+temporada_08_cap01,desaparición forzada,7
+temporada_08_cap02,lesbianismo,1
+temporada_08_cap02,represión_familiar,2
+temporada_08_cap02,secreto,3
+temporada_08_cap02,herencia,4
+temporada_08_cap02,clase_alta,5
+temporada_08_cap02,adolescencia,6
+temporada_08_cap02,incendio,7
+temporada_08_cap02,estigma_social,8
+temporada_08_cap03,separación matrimonial,1
+temporada_08_cap03,infidelidad,2
+temporada_08_cap03,pobreza,3
+temporada_08_cap03,obsesión,4
+temporada_08_cap03,custodia de hijos,5
+temporada_08_cap03,enfermedad infantil,6
+temporada_08_cap03,salud mental,7
+temporada_08_cap03,prisión,8
+temporada_08_cap03,religión,9
+temporada_08_cap04,abandono,1
+temporada_08_cap04,abuso_infantil,2
+temporada_08_cap04,prostitucion,3
+temporada_08_cap04,sadismo,4
+temporada_08_cap04,alcoholismo,5
+temporada_08_cap04,psicopatia,6
+temporada_08_cap04,pobreza,7
+temporada_08_cap04,violencia_intrafamiliar,8
+temporada_09_cap01,pobreza_rural,1
+temporada_09_cap01,madre_soltera,2
+temporada_09_cap01,paternidad,3
+temporada_09_cap01,celos,4
+temporada_09_cap01,violencia_de_genero,5
+temporada_09_cap01,comunidad_evangelica,6
+temporada_09_cap01,marginalidad,7
+temporada_09_cap01,engaño_familiar,8
+temporada_09_cap02,infidelidad,1
+temporada_09_cap02,maternidad_soltera,2
+temporada_09_cap02,fanatismo_religioso,3
+temporada_09_cap02,psicopatia,4
+temporada_09_cap02,impunidad,5
+temporada_09_cap02,femicidio,6
+temporada_09_cap02,pobreza,7
+temporada_09_cap03,herencia,1
+temporada_09_cap03,conflicto_fraternal,2
+temporada_09_cap03,pobreza_rural,3
+temporada_09_cap03,codicia,4
+temporada_09_cap03,traicion_familiar,5
+temporada_09_cap04,dictadura,1
+temporada_09_cap04,derechos_humanos,2
+temporada_09_cap04,tortura,3
+temporada_09_cap04,terrorismo,4
+temporada_09_cap04,prision_politica,5
+temporada_09_cap04,delacion,6
+temporada_09_cap04,justicia_transicional,7
+temporada_09_cap05,pobreza,1
+temporada_09_cap05,marginalidad,2
+temporada_09_cap05,alcoholismo,3
+temporada_09_cap05,violencia_intrafamiliar,4
+temporada_09_cap05,abandono_materno,5
+temporada_09_cap05,fenomenos_paranormales,6
+temporada_09_cap05,delincuencia_juvenil,7
+temporada_09_cap06,violencia_intrafamiliar,1
+temporada_09_cap06,alcoholismo,2
+temporada_09_cap06,infidelidad,3
+temporada_09_cap06,alzheimer,4
+temporada_09_cap06,abandono_adulto_mayor,5
+temporada_09_cap06,encubrimiento,6
+temporada_10_cap01,pobreza,1
+temporada_10_cap01,violencia_intrafamiliar,2
+temporada_10_cap01,embarazo,3
+temporada_10_cap01,encarcelamiento,4
+temporada_10_cap01,amor_romantico,5
+temporada_10_cap01,familia_numerosa,6
+temporada_10_cap02,abandono paterno,1
+temporada_10_cap02,adicción a drogas,2
+temporada_10_cap02,alcoholismo,3
+temporada_10_cap02,ascenso social,4
+temporada_10_cap02,abuso de confianza,5
+temporada_10_cap02,pobreza,6
+temporada_10_cap02,malversación de fondos,7
+temporada_10_cap03,guerra_balcanes,1
+temporada_10_cap03,inmigracion,2
+temporada_10_cap03,matrimonio_relampago,3
+temporada_10_cap03,violencia_intrafamiliar,4
+temporada_10_cap03,armas_de_fuego,5
+temporada_10_cap03,trastorno_mental,6
+temporada_10_cap03,abandono_familiar,7
+temporada_10_cap04,manipulación afectiva,1
+temporada_10_cap04,codicia,2
+temporada_10_cap04,psicopatía,3
+temporada_10_cap04,violencia intrafamiliar,4
+temporada_10_cap04,abuso de confianza,5
+temporada_10_cap04,drogas y alcohol,6
+temporada_10_cap04,clase media vulnerable,7
+temporada_10_cap05,grooming,1
+temporada_10_cap05,diferencia de edad,2
+temporada_10_cap05,fuga,3
+temporada_10_cap05,psicopatía,4
+temporada_10_cap05,medios de comunicación,5
+temporada_10_cap05,impunidad social,6
+temporada_10_cap05,obsesión afectiva,7
+temporada_10_cap05,clase social,8
+temporada_10_cap06,pobreza,1
+temporada_10_cap06,alcoholismo,2
+temporada_10_cap06,abuso infantil,3
+temporada_10_cap06,abandono materno,4
+temporada_10_cap06,marginalidad,5
+temporada_10_cap06,posible abuso sexual en la infancia del victimario,6
+temporada_10_cap06,negligencia parental,7
+temporada_10_cap06,venganza,8
+temporada_11_cap01,infidelidad,1
+temporada_11_cap01,celos,2
+temporada_11_cap01,armas de fuego,3
+temporada_11_cap01,familia,4
+temporada_11_cap01,cárcel,5
+temporada_11_cap01,crimen pasional,6
+temporada_11_cap02,pobreza,1
+temporada_11_cap02,alcoholismo,2
+temporada_11_cap02,marginalidad,3
+temporada_11_cap02,celos,4
+temporada_11_cap02,deudas,5
+temporada_11_cap02,suicidio,6
+temporada_11_cap02,violencia_intrafamiliar,7
+temporada_11_cap03,violencia_intrafamiliar,1
+temporada_11_cap03,dinero_por_encargo,2
+temporada_11_cap03,discriminación_mapuche,3
+temporada_11_cap03,complicidad_criminal,4
+temporada_11_cap03,clase_media,5
+temporada_11_cap03,soledad_emocional,6
+temporada_11_cap05,violencia_intrafamiliar,1
+temporada_11_cap05,abuso_sexual_infantil,2
+temporada_11_cap05,depresion,3
+temporada_11_cap05,alcoholismo,4
+temporada_11_cap05,mineria,5
+temporada_11_cap05,machismo,6
+temporada_11_cap05,celos,7
+temporada_11_cap05,dependencia_emocional,8
+temporada_11_cap06,incesto,1
+temporada_11_cap06,abuso_sexual_infantil,2
+temporada_11_cap06,sindrome_de_estocolmo,3
+temporada_11_cap06,pobreza,4
+temporada_11_cap06,impunidad,5
+temporada_11_cap06,infanticidio,6
+temporada_11_cap06,marginalidad,7
+temporada_11_cap07,pobreza,1
+temporada_11_cap07,prostitución intergeneracional,2
+temporada_11_cap07,abandono paterno,3
+temporada_11_cap07,marginalidad,4
+temporada_11_cap07,embarazo adolescente,5
+temporada_11_cap07,violencia,6
+temporada_11_cap07,exclusión social,7
+temporada_11_cap08,abandono paterno,1
+temporada_11_cap08,pobreza,2
+temporada_11_cap08,pandillas juveniles,3
+temporada_11_cap08,neonazismo,4
+temporada_11_cap08,marginalidad,5
+temporada_11_cap08,violencia urbana,6
+temporada_12_cap01,pobreza,1
+temporada_12_cap01,marginalidad,2
+temporada_12_cap01,drogas,3
+temporada_12_cap01,delincuencia_juvenil,4
+temporada_12_cap01,familia_disfuncional,5
+temporada_12_cap01,violencia_armada,6
+temporada_12_cap01,sistema_carcelario,7
+temporada_12_cap01,venganza,8
+temporada_12_cap02,venganza,1
+temporada_12_cap02,lealtad_laboral,2
+temporada_12_cap02,injusticia_laboral,3
+temporada_12_cap02,codicia,4
+temporada_12_cap02,abandono_familiar,5
+temporada_12_cap02,trabajo_precario,6
+temporada_12_cap03,alcoholismo,1
+temporada_12_cap03,pobreza,2
+temporada_12_cap03,abuso sexual infantil,3
+temporada_12_cap03,violencia intrafamiliar,4
+temporada_12_cap03,encubrimiento,5
+temporada_12_cap03,rehabilitación fallida,6
+temporada_12_cap03,estigma social,7
+temporada_12_cap04,violencia_intrafamiliar,1
+temporada_12_cap04,alcoholismo,2
+temporada_12_cap04,infidelidad,3
+temporada_12_cap04,machismo,4
+temporada_12_cap04,pobreza,5
+temporada_12_cap04,maternidad,6
+temporada_12_cap04,prisión,7
+temporada_12_cap05,marginalidad,1
+temporada_12_cap05,salud_mental,2
+temporada_12_cap05,adicciones,3
+temporada_12_cap05,pobreza,4
+temporada_12_cap05,abandono_familiar,5
+temporada_12_cap05,vida_en_calle,6
+temporada_12_cap05,familia_disfuncional,7
+temporada_12_cap06,amistad_traicionada,1
+temporada_12_cap06,pobreza,2
+temporada_12_cap06,carcel,3
+temporada_12_cap06,beneficio_penitenciario,4
+temporada_12_cap06,violencia_extrema,5
+temporada_12_cap06,impunidad,6
+temporada_12_cap06,fe_religiosa,7
+temporada_12_cap06,desilusion_amorosa,8
+temporada_12_cap07,pobreza,1
+temporada_12_cap07,prostitución infantil,2
+temporada_12_cap07,abuso de autoridad,3
+temporada_12_cap07,negligencia materna,4
+temporada_12_cap07,corrupción policial,5
+temporada_12_cap07,marginalidad,6
+temporada_12_cap08,neonazismo,1
+temporada_12_cap08,artes_marciales,2
+temporada_12_cap08,pandillas_juveniles,3
+temporada_12_cap08,prisión,4
+temporada_12_cap08,familia,5
+temporada_12_cap08,ideología_nacionalista,6
+temporada_12_cap08,marginalidad,7
+temporada_12_cap08,violencia_juvenil,8
+temporada_12_cap10,pobreza,1
+temporada_12_cap10,delincuencia,2
+temporada_12_cap10,drogas,3
+temporada_12_cap10,defensa_familiar,4
+temporada_12_cap10,justicia_lenta,5
+temporada_12_cap10,diabetes,6
+temporada_12_cap10,marginalidad,7
+temporada_13_cap01,pobreza,1
+temporada_13_cap01,marginalidad,2
+temporada_13_cap01,analfabetismo,3
+temporada_13_cap01,alcoholismo,4
+temporada_13_cap01,abandono_familiar,5
+temporada_13_cap01,prófugo_de_la_justicia,6
+temporada_13_cap01,infancia_vulnerable,7
+temporada_13_cap01,impunidad,8
+temporada_13_cap02,control materno,1
+temporada_13_cap02,aislamiento social,2
+temporada_13_cap02,religión,3
+temporada_13_cap02,abuso psicológico,4
+temporada_13_cap02,discapacidad,5
+temporada_13_cap02,justicia mal aplicada,6
+temporada_13_cap02,sumisión,7
+temporada_13_cap03,violencia_intrafamiliar,1
+temporada_13_cap03,pobreza,2
+temporada_13_cap03,celos,3
+temporada_13_cap03,abandono,4
+temporada_13_cap03,marginalidad_rural,5
+temporada_13_cap03,carceles,6
+temporada_13_cap03,machismo,7
+temporada_13_cap04,prostitución,1
+temporada_13_cap04,abandono materno,2
+temporada_13_cap04,adopción informal,3
+temporada_13_cap04,drogas,4
+temporada_13_cap04,violencia doméstica,5
+temporada_13_cap04,pobreza,6
+temporada_13_cap04,incesto,7
+temporada_13_cap05,prostitución,1
+temporada_13_cap05,robo,2
+temporada_13_cap05,drogas,3
+temporada_13_cap05,desaparición,4
+temporada_13_cap05,pobreza,5
+temporada_13_cap05,búsqueda familiar,6
+temporada_13_cap05,justicia sin cuerpo,7
+temporada_13_cap06,pobreza,1
+temporada_13_cap06,abandono infantil,2
+temporada_13_cap06,violencia intrafamiliar,3
+temporada_13_cap06,analfabetismo,4
+temporada_13_cap06,institucionalización carcelaria,5
+temporada_13_cap06,venganza,6
+temporada_13_cap06,marginalidad,7
+temporada_13_cap06,violencia sexual,8
+temporada_13_cap07,religion,1
+temporada_13_cap07,misticismo,2
+temporada_13_cap07,comunidad_cerrada,3
+temporada_13_cap07,embarazo_adolescente,4
+temporada_13_cap07,parto_natural,5
+temporada_13_cap07,muerte_materna,6
+temporada_13_cap07,inhumacion_ilegal,7
+temporada_13_cap07,fanatismo,8
+temporada_13_cap08,abuso sexual,1
+temporada_13_cap08,prostitución infantil,2
+temporada_13_cap08,pornografía infantil,3
+temporada_13_cap08,drogas,4
+temporada_13_cap08,poder económico,5
+temporada_13_cap08,corrupción,6
+temporada_13_cap08,rehabilitación,7
+temporada_13_cap08,delincuencia,8
+temporada_13_cap09,pobreza,1
+temporada_13_cap09,violencia_intrafamiliar,2
+temporada_13_cap09,discapacidad,3
+temporada_13_cap09,abuso_sexual,4
+temporada_13_cap09,impunidad,5
+temporada_13_cap09,drogas,6
+temporada_13_cap09,alcoholismo,7
+temporada_13_cap09,marginalidad,8
+temporada_13_cap10,pobreza,1
+temporada_13_cap10,abandono_paterno,2
+temporada_13_cap10,delincuencia,3
+temporada_13_cap10,drogas,4
+temporada_13_cap10,violencia_de_genero,5
+temporada_13_cap10,reincidencia,6
+temporada_13_cap10,religion_carcelaria,7
+temporada_13_cap10,extorsion,8
+temporada_13_cap11,abuso sexual infantil,1
+temporada_13_cap11,violencia intrafamiliar,2
+temporada_13_cap11,pobreza,3
+temporada_13_cap11,cesantía,4
+temporada_13_cap11,religión evangélica,5
+temporada_13_cap11,encubrimiento,6
+temporada_13_cap11,embarazo oculto,7
+temporada_13_cap12,enfermedad_mental,1
+temporada_13_cap12,alucinaciones,2
+temporada_13_cap12,manipulacion_economica,3
+temporada_13_cap12,amistad_toxica,4
+temporada_13_cap12,pobreza,5
+temporada_13_cap12,posible_asesino_serial,6
+temporada_13_cap12,religiosidad_delirante,7
+temporada_13_cap13,celos,1
+temporada_13_cap13,machismo,2
+temporada_13_cap13,pasta_base,3
+temporada_13_cap13,pobreza,4
+temporada_13_cap13,infidelidad_percibida,5
+temporada_13_cap13,temporeras,6
+temporada_13_cap13,familia_disfuncional,7
+temporada_13_cap14,pobreza,1
+temporada_13_cap14,marginalidad,2
+temporada_13_cap14,adicción,3
+temporada_13_cap14,abandono,4
+temporada_13_cap14,prostitución,5
+temporada_13_cap14,identidad_de_género,6
+temporada_13_cap14,violencia_intrafamiliar,7
+temporada_13_cap14,encierro,8
+temporada_13_cap15,embarazo adolescente,1
+temporada_13_cap15,pobreza,2
+temporada_13_cap15,paternidad no biológica,3
+temporada_13_cap15,abuso infantil,4
+temporada_13_cap15,familia disfuncional,5
+temporada_13_cap15,cárcel,6
+temporada_13_cap15,adn,7
+temporada_13_cap15,justicia,8
+temporada_14_cap01,alcoholismo,1
+temporada_14_cap01,violencia intrafamiliar,2
+temporada_14_cap01,pobreza,3
+temporada_14_cap01,abandono infantil,4
+temporada_14_cap01,machismo,5
+temporada_14_cap01,adicción,6
+temporada_14_cap01,encarcelamiento,7
+temporada_14_cap02,pobreza,1
+temporada_14_cap02,abandono infantil,2
+temporada_14_cap02,orfandad,3
+temporada_14_cap02,delincuencia juvenil,4
+temporada_14_cap02,narcotráfico,5
+temporada_14_cap02,tortura,6
+temporada_14_cap02,prisión,7
+temporada_14_cap02,maternidad,8
+temporada_14_cap02,fe religiosa,9
+temporada_14_cap02,ciclo intergeneracional de violencia,10
+temporada_14_cap03,pobreza,1
+temporada_14_cap03,analfabetismo,2
+temporada_14_cap03,herencia criminal intergeneracional,3
+temporada_14_cap03,violencia intrafamiliar,4
+temporada_14_cap03,narcotráfico,5
+temporada_14_cap03,vida carcelaria,6
+temporada_14_cap03,conversión religiosa,7
+temporada_14_cap04,herencia,1
+temporada_14_cap04,venganza,2
+temporada_14_cap04,familia disfuncional,3
+temporada_14_cap04,psicopatía,4
+temporada_14_cap04,delincuencia,5
+temporada_14_cap04,encarcelamiento,6
+temporada_14_cap04,abandono materno,7
+temporada_14_cap05,envenenamiento,1
+temporada_14_cap05,violencia intrafamiliar,2
+temporada_14_cap05,maternidad patológica,3
+temporada_14_cap05,pobreza,4
+temporada_14_cap05,dependencia económica,5
+temporada_14_cap05,encierro carcelario,6
+temporada_14_cap05,arrepentimiento,7
+temporada_14_cap05,tramadol,8
+temporada_14_cap06,inmigración dominicana,1
+temporada_14_cap06,pandillas juveniles,2
+temporada_14_cap06,codicia,3
+temporada_14_cap06,abandono familiar,4
+temporada_14_cap06,control parental,5
+temporada_14_cap06,sicariato adolescente,6
+temporada_14_cap06,marginalidad,7
+temporada_14_cap07,pobreza,1
+temporada_14_cap07,analfabetismo,2
+temporada_14_cap07,marginalidad,3
+temporada_14_cap07,adicción a drogas,4
+temporada_14_cap07,abandono familiar,5
+temporada_14_cap07,violencia contra la mujer,6
