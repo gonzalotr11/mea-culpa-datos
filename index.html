@@ -7,30 +7,30 @@
 <title>Mea Culpa, como datos</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,600;0,6..96,700;0,6..96,800;1,6..96,600;1,6..96,700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=JetBrains+Mono:wght@400;500&display=swap">
 <style>
 /* Identidad "Luz de calle": noche para orientarse, papel para leer, ámbar de farol para lo clave. */
 :root{
-  --bg:#FBF8F1; --panel:#FFFFFF; --sunk:#F2EDE2; --ink:#1B1D24; --muted:#5A5F6B; --line:#E6E0D3; --link:#33419E; --accent-soft:#FCEFD0;
-  --night:#111733; --night-line:#2A3156; --night-ink:#FBF8F1; --night-muted:#AEB3C9; --sodio:#F4A51C;
+  --bg:#FBF8F1; --panel:#FFFFFF; --sunk:#F2EDE2; --ink:#1B1D24; --muted:#5A5F6B; --line:#E6E0D3; --link:#8A4F00; --accent-soft:#FCEFD0;
+  --night:#0E0D0C; --night-line:#2C2A27; --night-ink:#F6F1E7; --night-muted:#ABA59A; --sodio:#F4A51C;
   --ph-antecedentes:#8592AE; --ph-escalada:#E0A526; --ph-detonante:#EA6A2A; --ph-crimen:#C41E3A; --ph-proceso_legal:#3D4FB8; --ph-consecuencias:#2B8A7E;
   --r-victimario:#1B1D24; --r-victima:#C41E3A; --r-complice:#6B5B7A; --r-autoridad:#3D4FB8; --r-tercero_afectado:#8A8D96; --r-sin_rol_criminal:#C9C4B8; --r-testigo:#C9C4B8;
   --v-afecto:#2B8A7E; --v-hostil:#C41E3A; --v-ambivalente:#D08F10; --v-neutro:#9A9DA6;
   --s1:#DCEBB4; --s2:#B2D57A; --s3:#7CB342; --s4:#3F7D24; --s5:#1F4D17; --s1t:#1B1D24; --s2t:#1B1D24; --s3t:#1B1D24; --s4t:#FFFFFF; --s5t:#FFFFFF;
-  --f-display:"Big Shoulders Display","Arial Narrow","Roboto Condensed",sans-serif;
+  --f-display:"Bodoni Moda","Didot","Bodoni 72",Georgia,serif;
   --f-body:"Newsreader",Georgia,"Times New Roman",serif;
   --f-mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  --bg:#0E1328; --panel:#161C38; --sunk:#1C2343; --ink:#ECEAF2; --muted:#A3A9C2; --line:#2A3156; --link:#A9B6FF; --accent-soft:#3A3016;
-  --night:#0A0E20; --night-line:#252C50;
+  --bg:#121110; --panel:#1A1917; --sunk:#22211E; --ink:#EEE9DF; --muted:#A8A296; --line:#33302B; --link:#F4C46A; --accent-soft:#3A3016;
+  --night:#070706; --night-line:#2A2724;
   --ph-antecedentes:#9AA6C2; --ph-escalada:#E8B444; --ph-detonante:#F0803F; --ph-crimen:#EE5266; --ph-proceso_legal:#7D8CF0; --ph-consecuencias:#45B3A5;
   --r-victimario:#ECEAF2; --r-victima:#EE5266; --r-complice:#A894BC; --r-autoridad:#7D8CF0; --r-tercero_afectado:#8F95AE; --r-sin_rol_criminal:#4A5170; --r-testigo:#4A5170;
   --v-afecto:#45B3A5; --v-hostil:#EE5266; --v-ambivalente:#E8B444; --v-neutro:#6E7491;
   color-scheme:dark}}
 :root[data-theme="dark"]{
-  --bg:#0E1328; --panel:#161C38; --sunk:#1C2343; --ink:#ECEAF2; --muted:#A3A9C2; --line:#2A3156; --link:#A9B6FF; --accent-soft:#3A3016;
-  --night:#0A0E20; --night-line:#252C50;
+  --bg:#121110; --panel:#1A1917; --sunk:#22211E; --ink:#EEE9DF; --muted:#A8A296; --line:#33302B; --link:#F4C46A; --accent-soft:#3A3016;
+  --night:#070706; --night-line:#2A2724;
   --ph-antecedentes:#9AA6C2; --ph-escalada:#E8B444; --ph-detonante:#F0803F; --ph-crimen:#EE5266; --ph-proceso_legal:#7D8CF0; --ph-consecuencias:#45B3A5;
   --r-victimario:#ECEAF2; --r-victima:#EE5266; --r-complice:#A894BC; --r-autoridad:#7D8CF0; --r-tercero_afectado:#8F95AE; --r-sin_rol_criminal:#4A5170; --r-testigo:#4A5170;
   --v-afecto:#45B3A5; --v-hostil:#EE5266; --v-ambivalente:#E8B444; --v-neutro:#6E7491;
@@ -64,7 +64,7 @@ header.mast{background:var(--night);color:var(--night-ink);border-bottom:1px sol
 @media (max-width:900px){.hero{grid-template-columns:minmax(0,1fr);padding-block:32px 36px}}
 .hero h1{margin:0;font-family:var(--f-display);font-weight:800;font-size:clamp(44px,7vw,80px);line-height:.88;text-transform:uppercase;letter-spacing:.005em;text-wrap:balance}
 .hero h1 span{color:var(--sodio)}
-.hero p{margin:18px 0 0;max-width:58ch;font-size:19px;line-height:1.5;color:#D9DCEA}
+.hero p{margin:18px 0 0;max-width:58ch;font-size:19px;line-height:1.5;color:#D8D2C6}
 .hero p small{display:block;margin-top:10px;font-size:14px;color:var(--night-muted);font-style:italic}
 .kpis{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 24px;font-family:var(--f-mono)}
 .kpis span{display:flex;flex-direction:column;gap:2px;border-top:1px solid var(--night-line);padding-top:10px;font-size:13px;color:var(--night-muted)}
@@ -164,7 +164,7 @@ section.block.al-c>:not(.eyebrow):not(h3):not(.sub){text-align:left}
 .tip b{display:block;font-family:var(--f-display);font-weight:800;font-size:19px;text-transform:uppercase;letter-spacing:.01em}
 .tip .r{color:var(--night-muted)}
 .tip .mono{color:var(--sodio)}
-.tip .ev{margin-top:6px;color:#D9DCEA;font-style:italic}
+.tip .ev{margin-top:6px;color:#D8D2C6;font-style:italic}
 .sesscale{display:flex;gap:4px;align-items:center;margin:2px 0 8px}
 .sesscale span{width:30px;height:22px;border-radius:6px;display:inline-flex;align-items:center;justify-content:center;font-family:var(--f-mono);font-size:11.5px}
 .sesscale span.on{outline:2.5px solid var(--sodio);outline-offset:2px}
@@ -240,8 +240,147 @@ td.k{font-family:var(--f-mono);font-size:12px;white-space:nowrap;color:var(--lin
 .notes h4{margin:0 0 8px;font-family:var(--f-mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:500}
 .notes ul{margin:0;padding-left:18px}
 footer.foot{margin-top:56px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:14px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 24px}
+/* v3: portada, constelación, recorridos, preguntas */
+.navr a[aria-current="page"]{color:var(--sodio)}
+.hero2{padding-block:40px 8px;max-width:900px}
+.hero2 h1{margin:0;font-family:var(--f-display);font-weight:800;font-size:clamp(46px,7.5vw,92px);line-height:.88;text-transform:uppercase;text-wrap:balance}
+.hero2 h1 span{color:var(--sodio)}
+.hero2 p{margin:22px 0 0;max-width:68ch;font-size:19px;line-height:1.6;color:#D8D2C6}
+.mast.compact .hero2{display:none}
+.mast.nostars .constel{display:none}
+.constel{padding-block:18px 26px}
+#stars{width:100%;height:auto;display:block;overflow:visible}
+#stars a{cursor:pointer;outline:none}
+#stars .st{transition:opacity .35s,r .35s}
+#stars a:focus-visible .st{stroke:var(--sodio);stroke-width:2.5}
+#stars .ax{font-family:var(--f-mono);font-size:11px;fill:var(--night-muted)}
+.constel-foot{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px 20px;margin-top:8px}
+.mlegend{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:13.5px;color:var(--night-muted)}
+.mlegend span{display:inline-flex;align-items:center;gap:6px}
+.mlegend i{width:9px;height:9px;border-radius:50%}
+#starcount{font-family:var(--f-mono);font-size:13px;color:var(--sodio)}
+.home{padding-top:36px}
+.doors{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+@media (max-width:900px){.doors{grid-template-columns:minmax(0,1fr)}}
+.door{display:flex;flex-direction:column;gap:10px;text-decoration:none;color:var(--ink);background:var(--panel);border:1.5px solid var(--line);border-radius:20px;padding:24px 24px 20px;min-height:230px;transition:border-color .15s,transform .15s}
+.door:hover{border-color:var(--ink);transform:translateY(-2px)}
+.door.hot{background:var(--night);color:var(--night-ink);border-color:var(--night)}
+.door.hot p{color:#D8D2C6}
+.door .dn{font-family:var(--f-mono);font-size:12.5px;color:var(--muted)}
+.door.hot .dn{color:var(--sodio)}
+.door h2{margin:0;font-family:var(--f-display);font-weight:800;font-size:34px;line-height:.95;text-transform:uppercase}
+.door p{margin:0;font-size:16px;color:var(--muted);line-height:1.5}
+.door .go{margin-top:auto;font-weight:600}
+.homefoot{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px 28px;align-items:center;margin-top:24px}
+@media (max-width:760px){.homefoot{grid-template-columns:minmax(0,1fr)}}
+.warn{margin:0;font-size:14.5px;color:var(--muted);max-width:90ch}
+.warn b{color:var(--ink)}
+.btn-ghost{min-height:44px;border:1.5px solid var(--ink);background:transparent;border-radius:999px;padding:0 20px;cursor:pointer;font-size:16px;white-space:nowrap}
+.btn-ghost:hover{background:var(--night);color:var(--night-ink);border-color:var(--night)}
+.btn-solid{display:inline-flex;align-items:center;min-height:44px;border:0;background:var(--night);color:var(--night-ink);border-radius:999px;padding:0 20px;cursor:pointer;font-size:16px;text-decoration:none}
+.btn-solid::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--sodio);margin-right:9px}
+.sechead{display:grid;gap:10px;padding-top:40px;margin-bottom:22px;max-width:760px}
+.sechead h2{margin:0;font-family:var(--f-display);font-weight:800;font-size:clamp(38px,5vw,58px);line-height:.92;text-transform:uppercase}
+.sechead p{margin:0;font-size:17.5px;color:var(--muted)}
+.sechead.c{margin-inline:auto;text-align:center}
+/* recorridos */
+.routes{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
+.route{display:flex;flex-direction:column;gap:10px;text-decoration:none;color:var(--ink);background:var(--panel);border:1.5px solid var(--line);border-radius:20px;padding:22px}
+.route:hover{border-color:var(--ink)}
+.route .n{font-family:var(--f-mono);font-size:30px;font-weight:500;line-height:1}
+.route .n small{font-size:13px;color:var(--muted);margin-left:6px}
+.route h3{margin:0;font-family:var(--f-display);font-weight:800;font-size:28px;line-height:.95;text-transform:uppercase}
+.route p{margin:0;color:var(--muted);font-size:15.5px}
+.rdet{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:28px;align-items:start}
+@media (max-width:900px){.rdet{grid-template-columns:minmax(0,1fr)}}
+.rstats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.rs{background:var(--sunk);border-radius:16px;padding:14px 16px}
+.rs b{display:block;font-family:var(--f-mono);font-weight:500;font-size:26px}
+.rs span{font-size:14px;color:var(--muted)}
+.sesbar{display:flex;height:22px;border-radius:999px;overflow:hidden;margin-top:8px}
+.sesbar i{display:block;height:100%}
+.cooc{display:grid;gap:10px}
+.cooc .row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 12px;font-size:15px}
+.cooc .bars{grid-column:1/-1;display:grid;gap:3px}
+.cooc .bars i{display:block;height:8px;border-radius:999px}
+.cooc .pct{font-family:var(--f-mono);font-size:13px;color:var(--muted)}
+.backlink{display:inline-block;margin-top:24px;color:var(--link);text-decoration:none;font-size:15px}
+/* preguntar */
+.askbox{background:var(--panel);border:1.5px solid var(--line);border-radius:24px;padding:clamp(20px,4vw,40px)}
+.sentence{font-family:var(--f-body);font-size:clamp(22px,2.8vw,32px);line-height:1.75;margin:0}
+.slot{position:relative;display:inline-block;vertical-align:baseline}
+.slot select{appearance:none;-webkit-appearance:none;font:inherit;font-size:.82em;color:var(--ink);background:var(--sunk);border:0;border-bottom:3px solid var(--sodio);border-radius:10px 10px 4px 4px;padding:2px 34px 2px 12px;cursor:pointer;max-width:min(80vw,520px)}
+.slot select.on{background:var(--night);color:var(--night-ink)}
+.slot::after{content:"▾";position:absolute;right:12px;top:50%;transform:translateY(-50%);font-size:.6em;pointer-events:none;color:var(--muted)}
+.askres{display:flex;flex-wrap:wrap;align-items:center;gap:12px 18px;margin-top:22px;padding-top:18px;border-top:1px solid var(--line)}
+.askres .count{font-family:var(--f-display);font-weight:800;font-size:44px;line-height:1;text-transform:uppercase}
+.askres .count span{color:var(--muted);font-size:20px;margin-left:6px}
+.askgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:22px;margin-top:22px;align-items:start}
+@media (max-width:960px){.askgrid{grid-template-columns:minmax(0,1fr)}}
+.panel2{background:var(--panel);border:1.5px solid var(--line);border-radius:20px;padding:20px}
+.panel2 h3{margin:0 0 4px;font-family:var(--f-display);font-weight:800;font-size:24px;text-transform:uppercase}
+.panel2 .sub{margin:0 0 14px;font-size:14.5px;color:var(--muted)}
+.minilist{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px}
+/* ficha con la red protagonista */
+.netsec .netgrid{grid-template-columns:minmax(0,1fr) 340px}
+@media (max-width:1060px){.netsec .netgrid{grid-template-columns:minmax(0,1fr)}}
+.netbox{position:relative}
+.nettools{position:absolute;top:12px;left:12px;right:12px;z-index:2;display:flex;flex-wrap:wrap;gap:6px;justify-content:space-between;pointer-events:none}
+.nettools>div{display:flex;gap:6px;pointer-events:auto}
+.nettools button{min-width:40px;min-height:40px;border:1.5px solid var(--line);background:var(--panel);border-radius:999px;padding:0 12px;cursor:pointer;font-size:14px;color:var(--ink)}
+.nettools button[aria-pressed="true"]{background:var(--night);color:var(--night-ink);border-color:var(--night)}
+#netsvg svg{min-height:560px;max-height:82vh;touch-action:none;cursor:grab}
+#netsvg svg.drag{cursor:grabbing}
+.netgrid:fullscreen{background:var(--bg);padding:16px;grid-template-columns:minmax(0,1fr) 380px;align-items:stretch}
+.netgrid:fullscreen #netsvg svg{height:calc(100vh - 170px);max-height:none}
+.netgrid:fullscreen .detail{max-height:calc(100vh - 32px)}
+
+.archhead{grid-column:1/-1;display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:8px 24px;padding-top:10px}
+.archhead h2{margin:0;font-family:var(--f-display);font-weight:800;font-size:clamp(38px,5vw,56px);line-height:.92;text-transform:uppercase}
+.kpis2{display:flex;flex-wrap:wrap;gap:4px 22px;color:var(--muted);font-size:14px}
+.kpis2 span{display:inline-flex;align-items:baseline;gap:6px}
+.kpis2 b{font-family:var(--f-mono);font-weight:500;font-size:18px;color:var(--ink)}
+.ftoggle{grid-column:1/-1}
 @media (prefers-reduced-motion:no-preference){.ep,.chip,.navep button{transition:border-color .15s,background .15s,color .15s}}
 img{max-width:100%}
+
+/* tipografía de títulos: Bodoni, en caja normal */
+.brandmark,.hero h1,.hero2 h1,.door h2,.sechead h2,.route h3,.panel2 h3,.askres .count,.archhead h2,.ep h4,.ficha-head h2,section.block>h3,.listhead h2,.detail h4,.fcard .big,.model h2,.tip b,.relhead .to{text-transform:none!important;letter-spacing:-.012em!important;font-weight:700!important}
+.brandmark{font-size:21px!important;font-style:italic}
+.hero2 h1{font-size:clamp(44px,6.6vw,86px)!important;line-height:.98!important;font-weight:800!important}
+.hero2 h1 span{font-style:italic}
+.sechead h2,.archhead h2{font-size:clamp(36px,4.6vw,56px)!important;line-height:1!important}
+.door h2{font-size:31px!important;line-height:1.02!important}
+.route h3{font-size:27px!important;line-height:1.04!important}
+.ep h4{font-size:23px!important;line-height:1.08!important}
+.ficha-head h2{font-size:clamp(38px,5.4vw,66px)!important;line-height:1!important}
+section.block>h3{font-size:clamp(30px,3.6vw,42px)!important;line-height:1.02!important}
+.detail h4{font-size:27px!important;line-height:1.04!important}
+.panel2 h3{font-size:23px!important}
+.askres .count{font-size:46px!important}
+.askres .count span{font-family:var(--f-body);font-style:italic}
+.tip b{font-size:18px!important}
+
+/* edición final */
+.hero2{margin-inline:auto;text-align:center;padding-top:52px}
+.hero2 h1{max-width:15ch;margin-inline:auto}
+.hero2 p{margin-inline:auto}
+.listcount{margin:0;font-size:16px;color:var(--muted)}
+.listcount b{font-family:var(--f-mono);font-weight:500;color:var(--ink)}
+.route.dark{background:var(--night);color:var(--night-ink);border-color:var(--night)}
+.route.dark p{color:#D8D2C6}
+.route.dark .n{color:var(--sodio)}
+.model .erd{display:flex;justify-content:center}
+@media (max-width:760px){
+  .topnav{flex-wrap:nowrap;flex-direction:column;align-items:flex-start}
+  .navr{flex-wrap:nowrap;overflow-x:auto;max-width:100%;gap:2px 16px;padding-bottom:6px;scrollbar-width:none}
+  .navr::-webkit-scrollbar{display:none}
+  .navr a{white-space:nowrap;padding:8px 0}
+  .hero2{padding-top:28px}
+  .hero2 p{font-size:17px}
+  #netsvg svg{min-height:420px}
+  .nettools{position:static;margin-bottom:6px}
+}
 </style>
 </head>
 <body>
@@ -249,33 +388,51 @@ img{max-width:100%}
 <header class="mast">
   <div class="wrap">
     <nav class="topnav" aria-label="Principal">
-      <a class="brandmark" href="./"><span class="thread" aria-hidden="true"><i></i><b></b><i class="o"></i></span>Mea Culpa, como datos</a>
+      <a class="brandmark" href="#inicio"><span class="thread" aria-hidden="true"><i></i><b></b><i class="o"></i></span>Mea Culpa, como datos</a>
       <div class="navr">
-        <div role="tablist" style="display:flex;gap:6px">
-          <button class="tab" role="tab" id="tab-ep" aria-selected="true">Episodios</button>
-          <button class="tab" role="tab" id="tab-model" aria-selected="false">Modelo de datos</button>
-        </div>
-        <a href="https://github.com/gonzalotr11/mea-culpa-datos">Repositorio</a>
+        <a href="#recorridos" data-v="rec">Recorridos</a>
+        <a href="#preguntar" data-v="ask">Pregúntale al archivo</a>
+        <a href="#archivo" data-v="arch">Archivo completo</a>
+        <a href="#modelo" data-v="model">Modelo de datos</a>
+        <a href="https://gonzalotr11.github.io/" target="_blank" rel="noopener">Sobre el autor ↗</a>
       </div>
     </nav>
-    <div class="hero">
-      <div>
-        <h1>121 relatos de delitos, <span>convertidos en datos</span></h1>
-        <p>Quién aparece, cómo se relaciona con quién y qué condiciones hicieron posible cada crimen, en 14 temporadas de un programa de televisión chileno. Una base relacional de 15 tablas construida a partir de los subtítulos.<small>Los nombres de los personajes son ficticios.</small></p>
-      </div>
-      <div class="kpis" id="kpis" aria-live="polite"></div>
+    <div class="hero2" id="hero">
+      <h1>Las historias detrás de <span>121 crímenes</span></h1>
+      <p><i>Mea Culpa</i> no solo dejó un archivo televisivo del crimen en Chile. Dejó 121 historias contadas con detalle: quiénes eran, cómo vivían, qué los unía y qué condiciones rodeaban sus vidas antes de que todo terminara en un crimen grave. Leídas en conjunto, permiten mirar la precariedad y la vulnerabilidad de los hogares en un país de marcadas desigualdades. Aquí puedes recorrer esas historias, los temas que se repiten en el fondo y las relaciones que las desencadenaron.</p>
+    </div>
+    <div class="constel" id="constel">
+      <svg id="stars" viewBox="0 0 1200 300" role="group" aria-label="Constelación de los 121 episodios"></svg>
+      <div class="constel-foot"><div class="mlegend" id="mlegend"></div><span id="starcount" aria-live="polite"></span></div>
     </div>
   </div>
 </header>
 <div class="wrap">
 
-  <main id="view-ep" class="layout">
+  <section id="v-home" class="home">
+    <div class="doors">
+      <a class="door" href="#recorridos"><span class="dn">01</span><h2>Recorridos</h2><p>Cinco hilos temáticos para empezar sin una pregunta previa: qué se repite, a quiénes afecta y tres historias para leer.</p><span class="go">Elegir un recorrido →</span></a>
+      <a class="door hot" href="#preguntar"><span class="dn">02</span><h2>Pregúntale al archivo</h2><p>Arma una pregunta con palabras y mira cómo se iluminan los casos que la cumplen y qué más aparece junto a ellos.</p><span class="go">Armar una pregunta →</span></a>
+      <a class="door" href="#archivo"><span class="dn">03</span><h2>Archivo completo</h2><p>Los 121 episodios con buscador y todos los filtros: temporada, delito, mecanismo, condiciones, habilitadores y temas.</p><span class="go">Abrir el archivo →</span></a>
+    </div>
+    <div class="homefoot">
+      <p class="warn"><b>Antes de entrar.</b> El archivo incluye homicidios, violencia sexual y abuso infantil. Los nombres de las personas son ficticios. La codificación la hizo un modelo de lenguaje a partir de subtítulos automáticos: sirve para explorar y enseñar, no reemplaza una codificación validada. <i>Mea Culpa</i> es una selección televisiva, no una muestra representativa de los crímenes en Chile.</p>
+      <button class="btn-ghost" id="random" type="button">Abrir una historia al azar</button>
+    </div>
+  </section>
+
+  <section id="v-rec" hidden></section>
+  <section id="v-ask" hidden></section>
+
+  <main id="view-ep" class="layout" hidden>
+    <div class="archhead"><h2>Archivo completo</h2><div class="kpis2" id="kpis" aria-live="polite"></div></div>
     <button class="ftoggle" id="ftoggle" aria-expanded="false" aria-controls="filters">Filtros y búsqueda</button>
     <aside class="filters" id="filters"></aside>
     <div id="main" style="min-width:0"></div>
   </main>
+  <section id="v-ficha" hidden></section>
   <main id="view-model" hidden></main>
-  <footer class="foot"><span>Base y explorador: Gonzalo Torres · <a href="https://gonzalotr11.github.io">gonzalotr11.github.io</a></span><span>Codificación hecha por un modelo de lenguaje a partir de subtítulos automáticos. Útil para explorar y enseñar; no reemplaza una codificación validada.</span></footer>
+  <footer class="foot"><span>Herramienta creada por <b>Gonzalo Torres Rosales</b> · <a href="https://gonzalotr11.github.io/">gonzalotr11.github.io</a></span><span>Datos derivados de los subtítulos de <i>Mea Culpa</i> (TVN). Nombres ficticios.</span></footer>
 </div>
 
 <script src="assets/data.js"></script>
@@ -362,28 +519,22 @@ function strip(e){if(!e.F.length)return `<div class="strip empty" title="Sin cap
 function phaseLegend(){return `<div class="legend">${PHASES.map(p=>`<span><i style="background:var(--ph-${p})"></i>${PH_LABEL[p]}</span>`).join('')}</div>`}
 function renderList(){
   const list=filtered();
-  M.innerHTML=`<div class="listhead"><h2>${list.length} episodio${list.length===1?'':'s'}</h2>${phaseLegend()}</div>`+
-   (list.length?`<div class="eplist">${list.map(e=>`<button class="ep" data-id="${e.id}">
-      <div class="id mono"><span class="code">${code(e)}</span><span>${esc(e.per)}</span></div>
-      <h4>${esc(title(e))}</h4>
-      ${strip(e)}
-      <p>${esc(e.res)}</p>
-      <div class="tags">${e.del.map(d=>`<span class="tag ${d[1]?'main':''}">${esc(lab(d[0]))}</span>`).join('')}${e.loc?`<span class="tag">${esc(e.loc)}</span>`:''}</div>
-    </button>`).join('')}</div>`:`<div class="empty-state">Ningún episodio cumple todos los filtros. Quita alguno para ampliar la búsqueda.</div>`);
+  M.innerHTML=`<div class="listhead"><p class="listcount">${list.length===EPS.length?'Mostrando los':'Mostrando'} <b>${list.length}</b> episodio${list.length===1?'':'s'}${list.length===EPS.length?'':' de '+EPS.length}</p>${phaseLegend()}</div>`+
+   (list.length?`<div class="eplist">${list.map(epCard).join('')}</div>`:`<div class="empty-state">Ningún episodio cumple todos los filtros. Quita alguno para ampliar la búsqueda.</div>`);
 }
-M.addEventListener('click',ev=>{const b=ev.target.closest('.ep');if(b)openEp(b.dataset.id)});
+
 
 /* ---------- ficha ---------- */
 let selNode=null,focusOn=false;
 const SES_LABEL={1:'bajo',2:'medio-bajo',3:'medio',4:'medio-alto',5:'alto'};
-function openEp(id,push=true){const e=EPS.find(x=>x.id===id);if(!e)return;current=e;selNode='P:'+(protag(e)?.id||'');focusOn=false;
-  if(push){try{history.replaceState(null,'','#'+id)}catch(_){}}
-  renderEp();window.scrollTo({top:0})}
-function goList(){current=null;try{history.replaceState(null,'',location.pathname+location.search)}catch(_){}renderList()}
+function openEp(id){if(decodeURIComponent(location.hash.slice(1))===id)showEp(id);else location.hash=id}
+function showEp(id){const e=EPS.find(x=>x.id===id);if(!e)return;current=e;selNode='P:'+(protag(e)?.id||'');focusOn=false;renderEp();window.scrollTo({top:0})}
+function goList(){current=null;renderList()}
+const FI=document.getElementById('v-ficha');
 function renderEp(){hideTip&&hideTip();
   const e=current,list=filtered(),i=list.indexOf(e),pr=protag(e);
   const prev=i>0?list[i-1]:null,next=i>=0&&i<list.length-1?list[i+1]:null;
-  M.innerHTML=`<button class="back" id="back">← Volver a ${list.length} episodios</button>
+  FI.innerHTML=`<button class="back" id="back">← Volver</button>
   <div class="ficha-head">
     <div style="min-width:0;display:flex;flex-direction:column;align-items:center;gap:12px">
       <div class="eyebrow mono"><span class="code">${code(e)}</span><span>${e.id}</span></div>
@@ -401,15 +552,15 @@ function renderEp(){hideTip&&hideTip();
       <div style="grid-column:1/-1"><dt>Temas</dt><dd class="tags">${e.tem.map(t=>`<span class="tag">${esc(t)}</span>`).join('')}</dd></div>
     </dl>
   </div>
-  <section class="block"><div class="eyebrow"><i>01</i>Hilo narrativo</div><h3>Cómo avanza el relato</h3>
+  <section class="block"><div class="eyebrow"><i>02</i>Hilo narrativo</div><h3>Cómo avanza el relato</h3>
     <p class="sub">Cada punto es un evento, en el orden en que ocurre en el relato. La línea muestra cómo el caso se mueve entre fases: un salto hacia arriba indica que el relato vuelve atrás.</p>
     ${e.F.length?swimlane(e)+eventList(e):`<div class="empty-state">Este episodio todavía no tiene capa narrativa (tabla 10_fases_narrativas).</div>`}
   </section>
-  <section class="block al-r"><div class="eyebrow">Red de relaciones<i>02</i></div><h3>Quién se relaciona con quién</h3>
-    <p class="sub">Personas en el círculo interior y entidades (lugares, organizaciones, armas, sustancias) en el exterior. El relleno del nodo indica el rol criminológico y el anillo, el nivel socioeconómico. El color y el trazo de la línea resumen el tono afectivo; la flecha apunta hacia quien está en posición subordinada. Toca un nodo para ver sus relaciones, o una línea para ver de qué se trata ese vínculo.</p>
-    <div class="netgrid"><div class="netbox"><div id="netsvg">${network(e)}</div><div id="netleg">${netLegend()}</div></div><div class="detail" id="detail"></div></div>
+  <section class="block al-c netsec"><div class="eyebrow"><i>01</i>Red de relaciones</div><h3>Quién se relaciona con quién</h3>
+    <p class="sub">Toca una persona o una línea para ver el detalle. El relleno indica el rol; el anillo, el nivel socioeconómico; la flecha apunta a quien está en posición subordinada. Arrastra para mover la red y acerca con los botones o con Ctrl + rueda.</p>
+    <div class="netgrid" id="netgrid"><div class="netbox"><div class="nettools"><div><button id="lay-r" type="button" aria-pressed="${LAYOUT==='anillos'}">Anillos</button><button id="lay-f" type="button" aria-pressed="${LAYOUT==='libre'}">Libre</button></div><div><button id="zin" type="button" aria-label="Acercar">+</button><button id="zout" type="button" aria-label="Alejar">−</button><button id="zreset" type="button">Centrar</button><button id="fs" type="button">Pantalla completa</button></div></div><div id="netsvg">${network(e)}</div><div id="netleg">${netLegend()}</div></div><div class="detail" id="detail"></div></div>
   </section>
-  <section class="block al-c"><div class="eyebrow"><i>03</i>Factores</div><h3>Por qué ocurrió</h3>
+  <section class="block al-r"><div class="eyebrow">Factores<i>03</i></div><h3>Por qué ocurrió</h3>
     <p class="sub">Mecanismo causal, condiciones de contexto, factores que facilitaron el delito y vulnerabilidades de las víctimas.</p>
     ${factors(e)}
   </section>
@@ -417,10 +568,10 @@ function renderEp(){hideTip&&hideTip();
     <p class="sub">Todo lo anterior se arma uniendo tablas por <span class="mono">id_episodio</span>, <span class="mono">id_personaje</span>, <span class="mono">id_entidad</span> e <span class="mono">id_relacion</span>. Elige una tabla para ver sus filas para este episodio.</p>
     <div class="tables" id="tblchips"></div><div id="tbl"></div>
   </section>`;
-  document.getElementById('back').onclick=goList;
+  document.getElementById('back').onclick=()=>{if(history.length>1)history.back();else location.hash='archivo'};
   if(prev)document.getElementById('prev').onclick=()=>openEp(prev.id);
   if(next)document.getElementById('next').onclick=()=>openEp(next.id);
-  wireSwim();wireNet();renderDetail();renderTables('05_relaciones');
+  {const ns=FI.querySelector('.netsec');FI.querySelector('.ficha-head').after(ns)}wireSwim();wireNet();wireTools();renderDetail();renderTables('05_relaciones');
 }
 
 /* hilo narrativo */
@@ -438,7 +589,7 @@ function wireSwim(){document.querySelectorAll('.swim .dot').forEach(g=>{const go
 /* red */
 let NET=null;
 function network(e){
-  const W=720,H=640,cx=W/2,cy=H/2,r1=160,r2=250;const pr=protag(e);
+  const W=920,H=760,cx=W/2,cy=H/2,r1=205,r2=325;const pr=protag(e);
   const others=e.P.filter(p=>p!==pr);
   // ordenar personas: primero las conectadas al protagonista
   const deg=id=>e.R.filter(r=>(r.a===id&&r.b===pr?.id)||(r.b===id&&r.a===pr?.id)).length;
@@ -451,9 +602,10 @@ function network(e){
   ents.forEach((o,i)=>{const a=o.a+ (i*0)/1;o.a2=a});
   // repartir uniformemente manteniendo el orden
   const off=ents.length?ents[0].a:0;ents.forEach((o,i)=>{const a=off+2*Math.PI*i/Math.max(1,ents.length);pos['E:'+o.en.id]={x:cx+r2*Math.cos(a),y:cy+r2*Math.sin(a),a}});
+  if(LAYOUT==='libre')forceLayout(e,pos,W,H,pr);
   NET={pos,e};
   let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Red de relaciones del episodio"><defs>${['afecto','hostil','ambivalente','neutro'].map(v=>`<marker id="m-${v}" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,1 L10,5 L0,9 z" fill="var(--v-${v})"/></marker>`).join('')}</defs>`;
-  s+=`<circle cx="${cx}" cy="${cy}" r="${r1}" fill="none" stroke="var(--muted)" stroke-opacity=".25" stroke-dasharray="2 5"/><circle cx="${cx}" cy="${cy}" r="${r2}" fill="none" stroke="var(--muted)" stroke-opacity=".25" stroke-dasharray="2 5"/>`;
+  if(LAYOUT==='anillos')s+=`<circle cx="${cx}" cy="${cy}" r="${r1}" fill="none" stroke="var(--muted)" stroke-opacity=".25" stroke-dasharray="2 5"/><circle cx="${cx}" cy="${cy}" r="${r2}" fill="none" stroke="var(--muted)" stroke-opacity=".25" stroke-dasharray="2 5"/>`;
   // aristas persona-entidad
   e.RE.forEach((r,i)=>{const a=pos['P:'+r.p],b=pos['E:'+r.e];if(!a||!b)return;s+=`<g class="edge-g" data-id="L:${i}" tabindex="0" aria-label="Vínculo entre persona y entidad"><line class="edge pe" data-a="P:${r.p}" data-b="E:${r.e}" x1="${a.x}" y1="${a.y}" x2="${b.x}" y2="${b.y}" stroke="var(--muted)" stroke-width="1" stroke-dasharray="3 3" opacity=".55"/><line class="hit" x1="${a.x}" y1="${a.y}" x2="${b.x}" y2="${b.y}"/></g>`});
   // aristas persona-persona (curvas suaves)
@@ -600,7 +752,7 @@ function erd(){
   // diagrama simple: episodio al centro, tablas hijas alrededor
   const B=(x,y,w,t,keys,hl)=>`<g><rect x="${x}" y="${y}" width="${w}" height="${20+keys.length*15}" rx="4" fill="var(--${hl?'accent-soft':'sunk'})" stroke="var(--${hl?'sodio':'line'})"/><text x="${x+8}" y="${y+14}" style="font-weight:600">${t}</text>${keys.map((k,i)=>`<text x="${x+8}" y="${y+31+i*15}" style="fill:var(--muted)">${k}</text>`).join('')}</g>`;
   const L=(x1,y1,x2,y2)=>`<path d="M${x1},${y1} C${(x1+x2)/2},${y1} ${(x1+x2)/2},${y2} ${x2},${y2}" fill="none" stroke="var(--muted)" stroke-width="1"/>`;
-  let s=`<svg width="720" height="400" viewBox="0 0 720 400" role="img" aria-label="Diagrama de relaciones entre tablas">`;
+  let s=`<svg width="720" height="400" viewBox="0 0 720 400" style="width:100%;height:auto;max-width:720px" role="img" aria-label="Diagrama de relaciones entre tablas">`;
   s+=L(170,200,250,60)+L(170,200,250,150)+L(170,200,250,250)+L(170,200,250,340)+L(410,60,480,40)+L(410,60,480,120)+L(410,150,480,200)+L(410,150,480,120)+L(410,60,480,280)+L(410,150,480,280)+L(170,200,250,250);
   s+=B(16,170,154,'01_episodios',['PK id_episodio','02 delitos · 03 temas'],true);
   s+=B(250,30,160,'04_personajes',['PK id_personaje','FK id_episodio']);
@@ -629,14 +781,124 @@ function renderModel(){
    <div style="min-width:0" class="right"><h2>Las tablas</h2><div class="tlist">${TABLES.map(([k,l,d])=>`<div class="tcard"><span class="cnt">${(C[k]||0).toLocaleString('es-CL')}</span><div class="nm">${k}</div><div class="layer">${l}</div><p>${d}</p></div>`).join('')}</div></div>
   </div>`}
 
-/* ---------- tabs y arranque ---------- */
-function setTab(t){document.getElementById('tab-ep').setAttribute('aria-selected',t==='ep');document.getElementById('tab-model').setAttribute('aria-selected',t==='model');
-  document.getElementById('view-ep').hidden=t!=='ep';document.getElementById('view-model').hidden=t!=='model';if(t==='model'&&!document.getElementById('view-model').innerHTML)renderModel()}
-document.getElementById('tab-ep').onclick=()=>setTab('ep');document.getElementById('tab-model').onclick=()=>setTab('model');
-function refresh(){renderFilters();const list=filtered();renderKpis(list);if(!current)renderList()}
-refresh();
-const h=(location.hash||'').slice(1);
-openEp(EPS.some(e=>e.id===h)?h:'temporada_01_cap01',false);
+/* ---------- v3: constelación ---------- */
+const MECH={crimen_planificado:['Planificado','#F4A51C'],acumulacion_tension:['Acumulación de tensión','#FF7A66'],crimen_oportunista:['Oportunista','#7FD1C4'],crimen_pasional:['Pasional','#F59AC0'],crimen_instrumental:['Instrumental','#A9B8FF'],negligencia_grave:['Negligencia grave','#C9D18A'],crimen_accidental:['Accidental','#E7E3D6']};
+const NOMECH=['Sin dato','#77716A'];
+function hsh(s){let h=2166136261;for(const c of s){h^=c.charCodeAt(0);h=Math.imul(h,16777619)}return (h>>>0)/4294967295}
+const STARPOS={};(function(){const W=1200,L=40,R=20,T=18,B=40,cw=(W-L-R)/14;const by={};EPS.forEach(e=>(by[e.t]=by[e.t]||[]).push(e));
+  for(const t in by){const arr=by[t].sort((a,b)=>a.c-b.c),n=arr.length;arr.forEach((e,k)=>{STARPOS[e.id]={x:L+(t-1)*cw+cw/2+(hsh(e.id+'x')-.5)*cw*.62,y:T+(300-T-B)*(k+.5)/n+(hsh(e.id+'y')-.5)*(220/n)*.7,r:2.6+Math.sqrt(e.P.length)*1.25}})}})();
+function drawStars(match,label){const svg=document.getElementById('stars');
+  let s=`<defs><filter id="glow" x="-2" y="-2" width="5" height="5"><feGaussianBlur stdDeviation="3.2"/></filter></defs>`;
+  for(let t=1;t<=14;t++){s+=`<text class="ax" x="${40+(t-.5)*(1140/14)}" y="292" text-anchor="middle">T${pad(t)}</text>`}
+  EPS.forEach(e=>{const p=STARPOS[e.id],m=e.mec?MECH[e.mec.tipo]||NOMECH:NOMECH,on=!match||match.has(e.id);
+    s+=`<a href="#${e.id}" data-id="${e.id}" aria-label="${esc(code(e)+', '+title(e))}">${on&&match?`<circle cx="${p.x}" cy="${p.y}" r="${p.r*2.3}" fill="${m[1]}" opacity=".5" filter="url(#glow)"/>`:''}<circle class="st" cx="${p.x}" cy="${p.y}" r="${p.r}" fill="${m[1]}" opacity="${on?1:.13}"/></a>`});
+  svg.innerHTML=s;
+  document.getElementById('starcount').textContent=match?`${match.size} de ${EPS.length} episodios ${label||'cumplen tu pregunta'}`:`${EPS.length} episodios · 14 temporadas · cada punto es una historia`;
+  svg.querySelectorAll('a').forEach(a=>{a.addEventListener('pointermove',ev=>starTip(a.dataset.id,ev));a.addEventListener('pointerleave',hideTip);a.addEventListener('focus',()=>starTip(a.dataset.id,null,a));a.addEventListener('blur',hideTip)})}
+function starTip(id,ev,el){const e=EPS.find(x=>x.id===id);if(!TIP){TIP=document.createElement('div');TIP.className='tip';document.body.appendChild(TIP)}
+  const m=e.mec?MECH[e.mec.tipo]:null;TIP.innerHTML=`<b>${esc(title(e))}</b><span class="r">${code(e)}${m?' · '+m[0].toLowerCase():''}</span><div class="ev">${esc(trunc(e.res,160))}</div>`;TIP.hidden=false;
+  let x,y;if(ev){x=ev.clientX+14;y=ev.clientY+14}else{const r=el.getBoundingClientRect();x=r.right+8;y=r.top}
+  const w=TIP.offsetWidth,h=TIP.offsetHeight;if(x+w>innerWidth-8)x=Math.max(8,x-w-28);if(y+h>innerHeight-8)y=Math.max(8,innerHeight-h-8);TIP.style.left=x+'px';TIP.style.top=y+'px'}
+document.getElementById('mlegend').innerHTML=Object.values(MECH).map(([l,c])=>`<span><i style="background:${c}"></i>${l}</span>`).join('')+`<span><i style="background:${NOMECH[1]}"></i>sin dato</span>`;
+
+/* ---------- utilidades comunes ---------- */
+function epCard(e){return `<button class="ep" data-id="${e.id}">
+      <div class="id mono"><span class="code">${code(e)}</span><span>${esc(e.per)}</span></div>
+      <h4>${esc(title(e))}</h4>${strip(e)}<p>${esc(e.res)}</p>
+      <div class="tags">${e.del.map(d=>`<span class="tag ${d[1]?'main':''}">${esc(lab(d[0]))}</span>`).join('')}${e.loc?`<span class="tag">${esc(e.loc)}</span>`:''}</div></button>`}
+document.addEventListener('click',ev=>{const b=ev.target.closest('.ep');if(b)openEp(b.dataset.id)});
+function toArchive(sel){GROUPS.forEach(g=>state.sel[g.k].clear());state.q='';for(const k in sel)sel[k].forEach(v=>state.sel[k].add(v));location.hash='archivo'}
+function share(list,f){return list.length?list.filter(f).length/list.length:0}
+function coocRows(list,exclude){const rows=[];[['cond',allVals.cond],['hab',allVals.hab]].forEach(([k,vals])=>vals.forEach(([v])=>{if(exclude.includes(v))return;const sm=share(list,e=>e[k].includes(v)),sa=share(EPS,e=>e[k].includes(v));if(sm>=.25)rows.push({v,sm,sa,d:sm-sa})}));
+  rows.sort((a,b)=>b.d-a.d);return rows.slice(0,6).map(r=>`<div class="row"><span>${esc(lab(r.v))}</span><span class="pct">${Math.round(r.sm*100)}% aquí · ${Math.round(r.sa*100)}% en todo el archivo</span><div class="bars"><i style="width:${r.sm*100}%;background:var(--sodio)"></i><i style="width:${r.sa*100}%;background:var(--line)"></i></div></div>`).join('')}
+
+/* ---------- recorridos ---------- */
+const ROUTES=[
+ {k:'casa',t:'La violencia que escala en casa',d:'Conflictos de pareja o de familia que se acumulan en el tiempo hasta terminar en un crimen. El patrón es violencia intrafamiliar y el mecanismo, acumulación de tensión.',f:e=>e.mec&&e.mec.pat==='violencia_intrafamiliar'&&e.mec.tipo==='acumulacion_tension',sel:{pat:['violencia_intrafamiliar'],mec:['acumulacion_tension']}},
+ {k:'nadie',t:'Lo que nadie detuvo',d:'Casos con abandono institucional como condición de fondo e impunidad previa como factor que hizo posible el crimen.',f:e=>e.cond.includes('abandono_institucional')&&e.hab.includes('impunidad_previa'),sel:{cond:['abandono_institucional'],hab:['impunidad_previa']}},
+ {k:'plata',t:'Cuando la plata manda',d:'Historias en que la dependencia económica de una persona respecto de otra facilitó el crimen.',f:e=>e.hab.includes('dependencia_economica'),sel:{hab:['dependencia_economica']}},
+ {k:'infancia',t:'Infancias en riesgo',d:'Casos en que la vulnerabilidad de la infancia aparece como condición de fondo de la historia.',f:e=>e.cond.includes('vulnerabilidad_infancia'),sel:{cond:['vulnerabilidad_infancia']}},
+ {k:'pobreza',t:'La pobreza como telón de fondo',d:'Historias en que la pobreza aparece entre las condiciones estructurales del caso. Es la condición más frecuente del archivo.',f:e=>e.cond.includes('pobreza'),sel:{cond:['pobreza']}}
+];
+function renderRec(k){const V=document.getElementById('v-rec');const R=ROUTES.find(r=>r.k===k);
+  if(!R){drawStars(null);V.innerHTML=`<div class="sechead"><h2>Recorridos</h2><p>Cinco hilos para entrar al archivo. Cada uno reúne los episodios que comparten una situación de fondo y muestra qué más se repite en ellos.</p></div>
+    <div class="routes">${ROUTES.map(r=>{const n=EPS.filter(r.f).length;return `<a class="route" href="#recorridos/${r.k}"><span class="n">${n}<small>episodios</small></span><h3>${r.t}</h3><p>${r.d}</p></a>`}).join('')}<a class="route dark" href="#preguntar"><span class="n">?</span><h3>¿Buscas otro tema?</h3><p>Arma tu propia pregunta combinando tipo de relación, condiciones de fondo y factores habilitadores.</p></a></div>`;return}
+  const L=EPS.filter(R.f);drawStars(new Set(L.map(e=>e.id)),'están en este recorrido');
+  const mc={};L.forEach(e=>{if(e.mec)mc[e.mec.tipo]=(mc[e.mec.tipo]||0)+1});const topm=Object.entries(mc).sort((a,b)=>b[1]-a[1])[0];
+  const ses=[0,0,0,0,0];let vt=0;L.forEach(e=>e.P.forEach(p=>{if(p.rc==='victima'&&p.ses){ses[p.ses-1]++;vt++}}));
+  const ex=L.slice().sort((a,b)=>b.F.length-a.F.length||b.P.length-a.P.length).slice(0,3);
+  const own=[].concat(...Object.values(R.sel));
+  V.innerHTML=`<div class="sechead"><h2>${R.t}</h2><p>${R.d}</p></div>
+   <div class="rdet"><div style="display:grid;gap:14px">
+     <div class="rstats"><div class="rs"><b>${L.length}</b><span>episodios de ${EPS.length}</span></div><div class="rs"><b>${Math.round(share(L,e=>e.hom)*100)}%</b><span>terminan en homicidio</span></div>
+     <div class="rs" style="grid-column:1/-1"><span>Mecanismo más frecuente</span><b style="font-size:22px">${topm?esc(MECH[topm[0]]?MECH[topm[0]][0]:lab(topm[0])):'—'}${topm?` <span style="font-size:14px;color:var(--muted)">${topm[1]} de ${L.length}</span>`:''}</b></div>
+     <div class="rs" style="grid-column:1/-1"><span>Nivel socioeconómico de las víctimas (${vt} con dato)</span><div class="sesbar">${ses.map((n,i)=>n?`<i style="width:${n/vt*100}%;background:var(--s${i+1})" title="NSE ${i+1}: ${n}"></i>`:'').join('')}</div><span style="font-size:12.5px">de 1 (bajo) a 5 (alto)</span></div></div>
+     <div class="panel2"><h3>Qué más se repite</h3><p class="sub">Condiciones y factores más frecuentes en este recorrido que en el resto del archivo.</p><div class="cooc">${coocRows(L,own)}</div></div>
+   </div>
+   <div><div class="panel2"><h3>Tres historias para empezar</h3><p class="sub">Las de relato más detallado dentro del recorrido.</p><div class="minilist" style="grid-template-columns:minmax(0,1fr)">${ex.map(epCard).join('')}</div>
+   <div style="margin-top:14px"><button class="btn-solid" id="rec2arch" type="button">Ver los ${L.length} episodios en el archivo</button></div></div></div></div>
+   <a class="backlink" href="#recorridos">← Todos los recorridos</a>`;
+  document.getElementById('rec2arch').onclick=()=>toArchive(R.sel)}
+
+/* ---------- pregúntale al archivo ---------- */
+const ASK={pat:'',cond:'',hab:'',mec:''};
+function askMatch(e){return (!ASK.pat||e.mec&&e.mec.pat===ASK.pat)&&(!ASK.cond||e.cond.includes(ASK.cond))&&(!ASK.hab||e.hab.includes(ASK.hab))&&(!ASK.mec||e.mec&&e.mec.tipo===ASK.mec)}
+function slotOpts(k,any){return `<option value="">${any}</option>`+allVals[k].map(([v,n])=>`<option value="${esc(v)}" ${ASK[k]===v?'selected':''}>${esc(k==='mec'&&MECH[v]?MECH[v][0].toLowerCase():lab(v))}</option>`).join('')}
+function renderAsk(){const V=document.getElementById('v-ask');
+  V.innerHTML=`<div class="sechead"><h2>Pregúntale al archivo</h2><p>Completa la frase tocando las palabras marcadas. Arriba, la constelación ilumina los casos que la cumplen.</p></div>
+  <div class="askbox"><p class="sentence">Muéstrame casos de <span class="slot"><select data-k="pat" aria-label="Tipo de relación">${slotOpts('pat','cualquier tipo de relación')}</select></span> donde había <span class="slot"><select data-k="cond" aria-label="Condición de fondo">${slotOpts('cond','cualquier condición de fondo')}</select></span> y que fueron posibles por <span class="slot"><select data-k="hab" aria-label="Factor habilitador">${slotOpts('hab','cualquier factor')}</select></span>, en un crimen <span class="slot"><select data-k="mec" aria-label="Mecanismo">${slotOpts('mec','de cualquier tipo')}</select></span>.</p>
+  <div class="askres" id="askres"></div></div>
+  <div class="askgrid"><div class="panel2" id="cooc"></div><div class="panel2" id="asklist"></div></div>`;
+  V.querySelectorAll('select').forEach(s=>s.onchange=()=>{ASK[s.dataset.k]=s.value;updateAsk()});updateAsk()}
+function updateAsk(){const V=document.getElementById('v-ask');V.querySelectorAll('select').forEach(s=>s.classList.toggle('on',!!s.value));
+  const m=EPS.filter(askMatch),any=Object.values(ASK).some(Boolean);drawStars(any?new Set(m.map(e=>e.id)):null);
+  document.getElementById('askres').innerHTML=`<span class="count">${m.length}<span>episodio${m.length===1?'':'s'}</span></span>${any&&m.length?`<button class="btn-solid" id="toarch" type="button">Ver estos casos en el archivo</button>`:''}${any?`<button class="btn-ghost" id="askclear" type="button">Limpiar</button>`:''}<button class="btn-ghost" id="askrand" type="button">Una pregunta al azar</button>`;
+  const ta=document.getElementById('toarch');if(ta)ta.onclick=()=>{const sel={};for(const k in ASK)if(ASK[k])sel[k]=[ASK[k]];toArchive(sel)};
+  const ac=document.getElementById('askclear');if(ac)ac.onclick=()=>{for(const k in ASK)ASK[k]='';renderAsk()};
+  document.getElementById('askrand').onclick=()=>{for(let i=0;i<80;i++){const pick=k=>{const v=allVals[k];return v[Math.floor(Math.random()*Math.min(v.length,10))][0]};
+    ASK.pat=Math.random()<.6?pick('pat'):'';ASK.cond=pick('cond');ASK.hab=Math.random()<.7?pick('hab'):'';ASK.mec='';const n=EPS.filter(askMatch).length;if(n>=3&&n<=14)break}renderAsk()};
+  document.getElementById('cooc').innerHTML=`<h3>Qué más aparece</h3>`+(any&&m.length>=2?`<p class="sub">Condiciones y factores más frecuentes en estos ${m.length} casos que en todo el archivo.</p><div class="cooc">${coocRows(m,[ASK.cond,ASK.hab])||'<p class="sub">Nada se destaca: estos casos se parecen al resto del archivo.</p>'}</div>`:`<p class="sub">Elige al menos una parte de la frase para ver qué otras condiciones y factores acompañan a esos casos.</p>`);
+  document.getElementById('asklist').innerHTML=`<h3>${any?'Los casos':'Todos los casos'}</h3><p class="sub">${m.length>12?`Los primeros 12 de ${m.length}. El resto está en el archivo completo.`:m.length?'Toca uno para abrir su ficha.':'Ningún episodio cumple todas las condiciones. Prueba quitando una.'}</p><div class="minilist">${m.slice(0,12).map(epCard).join('')}</div>`}
+
+/* ---------- red: disposición libre, zoom y pantalla completa ---------- */
+let LAYOUT='anillos',VB=null;
+function forceLayout(e,pos,W,H,pr){const P=Object.keys(pos).map(k=>({k,x:pos[k].x,y:pos[k].y,vx:0,vy:0,fix:!!pr&&k==='P:'+pr.id}));const idx={};P.forEach((p,i)=>idx[p.k]=i);
+  const L=[];e.R.forEach(r=>{const a=idx['P:'+r.a],b=idx['P:'+r.b];if(a!=null&&b!=null)L.push([a,b,190])});e.RE.forEach(r=>{const a=idx['P:'+r.p],b=idx['E:'+r.e];if(a!=null&&b!=null)L.push([a,b,130])});
+  const cx=W/2,cy=H/2;for(let it=0;it<360;it++){const al=1-it/360;
+    for(let i=0;i<P.length;i++)for(let j=i+1;j<P.length;j++){let dx=P[j].x-P[i].x,dy=P[j].y-P[i].y;const d2=dx*dx+dy*dy+.01,d=Math.sqrt(d2),f=9000/d2;dx/=d;dy/=d;P[i].vx-=dx*f;P[i].vy-=dy*f;P[j].vx+=dx*f;P[j].vy+=dy*f}
+    L.forEach(([a,b,len])=>{let dx=P[b].x-P[a].x,dy=P[b].y-P[a].y;const d=Math.sqrt(dx*dx+dy*dy)||1,f=(d-len)*.035;dx/=d;dy/=d;P[a].vx+=dx*f;P[a].vy+=dy*f;P[b].vx-=dx*f;P[b].vy-=dy*f});
+    for(let i=0;i<P.length;i++)for(let j=i+1;j<P.length;j++){const a=P[i],b=P[j];let dx=b.x-a.x,dy=b.y-a.y;const d=Math.sqrt(dx*dx+dy*dy)||.1,min=a.k.startsWith('P')&&b.k.startsWith('P')?120:80;if(d<min){const m=(min-d)/2;dx/=d;dy/=d;if(!a.fix){a.x-=dx*m;a.y-=dy*m}if(!b.fix){b.x+=dx*m;b.y+=dy*m}}}
+    P.forEach(p=>{p.vx+=(cx-p.x)*.005;p.vy+=(cy-p.y)*.005;if(p.fix){p.x=cx;p.y=cy;p.vx=p.vy=0;return}p.x+=Math.max(-30,Math.min(30,p.vx*al));p.y+=Math.max(-30,Math.min(30,p.vy*al));p.vx*=.5;p.vy*=.5;p.x=Math.max(150,Math.min(W-150,p.x));p.y=Math.max(60,Math.min(H-60,p.y))})}
+  P.forEach(p=>{pos[p.k]={x:p.x,y:p.y,a:Math.atan2(p.y-cy,p.x-cx)}})}
+function setupZoom(){const svg=document.querySelector('#netsvg svg');if(!svg)return;const vb=svg.viewBox.baseVal,B={x:0,y:0,w:vb.width,h:vb.height};if(!VB){VB={...B};if(svg.clientWidth&&svg.clientWidth<620){const k=.72;VB={x:B.w*(1-k)/2,y:B.h*(1-k)/2,w:B.w*k,h:B.h*k}}}
+  const apply=()=>svg.setAttribute('viewBox',`${VB.x} ${VB.y} ${VB.w} ${VB.h}`);apply();
+  const zoomAt=(mx,my,k)=>{const nw=Math.min(B.w*1.6,Math.max(B.w*.3,VB.w*k)),kk=nw/VB.w;VB.x=mx-(mx-VB.x)*kk;VB.y=my-(my-VB.y)*kk;VB.w=nw;VB.h*=kk;apply()};
+  svg.addEventListener('wheel',ev=>{if(!(ev.ctrlKey||ev.metaKey||document.fullscreenElement))return;ev.preventDefault();const r=svg.getBoundingClientRect();zoomAt(VB.x+(ev.clientX-r.left)/r.width*VB.w,VB.y+(ev.clientY-r.top)/r.height*VB.h,ev.deltaY>0?1.12:1/1.12)},{passive:false});
+  let drag=null;svg.addEventListener('pointerdown',ev=>{if(ev.target.closest('.node,.edge-g'))return;drag={x:ev.clientX,y:ev.clientY,vx:VB.x,vy:VB.y};svg.setPointerCapture(ev.pointerId);svg.classList.add('drag')});
+  svg.addEventListener('pointermove',ev=>{if(!drag)return;const r=svg.getBoundingClientRect();VB.x=drag.vx-(ev.clientX-drag.x)/r.width*VB.w;VB.y=drag.vy-(ev.clientY-drag.y)/r.height*VB.h;apply()});
+  const end=()=>{drag=null;svg.classList.remove('drag')};svg.addEventListener('pointerup',end);svg.addEventListener('pointercancel',end);
+  window._zoom={in:()=>zoomAt(VB.x+VB.w/2,VB.y+VB.h/2,1/1.25),out:()=>zoomAt(VB.x+VB.w/2,VB.y+VB.h/2,1.25),reset:()=>{VB={...B};apply()}}}
+function wireTools(){const lay=m=>{LAYOUT=m;document.getElementById('lay-r').setAttribute('aria-pressed',m==='anillos');document.getElementById('lay-f').setAttribute('aria-pressed',m==='libre');VB=null;hideTip();document.getElementById('netsvg').innerHTML=network(current);wireNet();highlight();setupZoom()};
+  document.getElementById('lay-r').onclick=()=>lay('anillos');document.getElementById('lay-f').onclick=()=>lay('libre');
+  document.getElementById('zin').onclick=()=>window._zoom.in();document.getElementById('zout').onclick=()=>window._zoom.out();document.getElementById('zreset').onclick=()=>window._zoom.reset();
+  const g=document.getElementById('netgrid'),fs=document.getElementById('fs');if(!g.requestFullscreen){fs.hidden=true}else fs.onclick=()=>{document.fullscreenElement?document.exitFullscreen():g.requestFullscreen()};
+  setupZoom()}
+document.addEventListener('fullscreenchange',()=>{const fs=document.getElementById('fs');if(fs)fs.textContent=document.fullscreenElement?'Salir de pantalla completa':'Pantalla completa'});
+
+/* ---------- vistas y arranque ---------- */
+const VIEWS={home:'v-home',rec:'v-rec',ask:'v-ask',arch:'view-ep',ficha:'v-ficha',model:'view-model'};
+function show(v){for(const k in VIEWS)document.getElementById(VIEWS[k]).hidden=k!==v;const mast=document.querySelector('.mast');
+  mast.classList.toggle('compact',v!=='home');mast.classList.toggle('nostars',!['home','ask','rec'].includes(v));
+  document.querySelectorAll('.navr a[data-v]').forEach(a=>a.dataset.v===v?a.setAttribute('aria-current','page'):a.removeAttribute('aria-current'))}
+function refresh(){renderFilters();const list=filtered();renderKpis(list);renderList()}
+function route(){hideTip();if(document.fullscreenElement)document.exitFullscreen();const h=decodeURIComponent((location.hash||'').slice(1));
+  if(EPS.some(e=>e.id===h)){show('ficha');VB=null;showEp(h);return}
+  current=null;const [v,sub]=h.split('/');
+  if(v==='recorridos'){show('rec');renderRec(sub)}else if(v==='preguntar'){show('ask');renderAsk()}else if(v==='archivo'){show('arch');refresh()}
+  else if(v==='modelo'){show('model');if(!document.getElementById('view-model').innerHTML)renderModel()}else{show('home');drawStars(null)}
+  window.scrollTo(0,0)}
+document.getElementById('random').onclick=()=>{location.hash=EPS[Math.floor(Math.random()*EPS.length)].id};
+window.addEventListener('hashchange',route);route();
 </script>
 </body>
 </html>

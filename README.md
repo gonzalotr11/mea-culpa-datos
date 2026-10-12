@@ -30,15 +30,16 @@ Cada episodio es un relato largo sobre un delito. La base lo descompone en unida
 
 ## El explorador
 
-`index.html` permite:
+`index.html` ofrece tres formas de entrar al archivo:
 
-- **Filtrar episodios** por temporada, tipo de delito, mecanismo causal, patrón relacional, condiciones estructurales, habilitadores y temas, además de buscar por texto libre.
-- **Ver el hilo narrativo** de cada episodio: la secuencia de eventos en seis fases (antecedentes, escalada, detonante, crimen, proceso legal y consecuencias).
-- **Recorrer la red de relaciones** entre el protagonista, otras personas y entidades, con el tono afectivo de cada vínculo, la asimetría de poder y el nivel socioeconómico de cada personaje.
-- **Revisar los factores** del caso: mecanismo, condiciones, habilitadores y vulnerabilidades de las víctimas.
-- **Ver las filas** de cada tabla que alimentan la ficha del episodio, para mostrar cómo se unen las tablas mediante sus claves.
+- **Portada:** los 121 episodios como una constelación ordenada por temporada. El color indica el mecanismo del crimen y el tamaño, cuántas personas aparecen en la historia. Cada punto abre su ficha.
+- **Recorridos:** cinco hilos temáticos (violencia que escala en casa, abandono institucional e impunidad, dependencia económica, infancias en riesgo, pobreza). Cada uno muestra cuántos episodios reúne, qué mecanismo predomina, el nivel socioeconómico de las víctimas, qué condiciones se repiten más que en el resto del archivo y tres historias para empezar.
+- **Pregúntale al archivo:** una frase con huecos (tipo de relación, condición de fondo, factor habilitador, mecanismo). Al completarla se ilumina la constelación, se actualiza el conteo y se muestra qué otras condiciones acompañan a esos casos.
+- **Archivo completo:** buscador y filtros por temporada, delito, mecanismo, patrón relacional, condiciones, habilitadores y temas.
 
-El sitio es un solo archivo HTML sin servidor ni dependencias de instalación. Para verlo localmente basta con hacer doble clic en `index.html`.
+La **ficha de cada episodio** pone primero la red de relaciones: personas y entidades, con el rol de cada persona, su nivel socioeconómico, el tono afectivo de cada vínculo y la asimetría de poder. Se puede ver en anillos o en disposición libre, acercar, desplazar y abrir en pantalla completa; al tocar una persona o una línea se ve el detalle. Siguen el hilo narrativo en seis fases, los factores del caso y las filas de cada tabla que alimentan la ficha.
+
+El sitio es un solo archivo HTML sin servidor ni dependencias de instalación. Para verlo localmente basta con hacer doble clic en `index.html`. Contiene casos de homicidio, violencia sexual y abuso infantil; la portada lo advierte.
 
 ## Modelo de datos
 
