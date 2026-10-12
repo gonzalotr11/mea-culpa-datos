@@ -176,6 +176,16 @@ section.block.al-c>:not(.eyebrow):not(h3):not(.sub){text-align:left}
 .node .ring{fill:none;stroke:var(--link);stroke-width:2;stroke-dasharray:3 3;opacity:0}
 .node.sel .ring{opacity:1}
 .edge{fill:none;stroke-linecap:round}
+.edge-g{cursor:pointer}
+.edge-g .hit{fill:none;stroke:transparent;stroke-width:16;pointer-events:stroke}
+.edge-g:hover .edge.pp,.edge-g:focus-visible .edge.pp{stroke-width:5px}
+.edge-g:hover .edge.pe,.edge-g:focus-visible .edge.pe{stroke-width:2.5px;opacity:1}
+.edge-g.sel .edge.pp{stroke-width:5.5px}
+.edge-g.sel .edge.pe{stroke-width:2.5px;opacity:1}
+.edge-g:focus{outline:none}
+.relhead{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;margin:4px 0 10px}
+.relhead .arrow{font-family:var(--f-mono);color:var(--muted)}
+.relhead .to{font-family:var(--f-display);font-weight:800;font-size:22px;text-transform:uppercase;line-height:1}
 .dim{opacity:.12}
 .netlegend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:13.5px;color:var(--muted);padding:10px 8px 2px}
 .netlegend span{display:inline-flex;align-items:center;gap:6px}
@@ -396,7 +406,7 @@ function renderEp(){hideTip&&hideTip();
     ${e.F.length?swimlane(e)+eventList(e):`<div class="empty-state">Este episodio todavía no tiene capa narrativa (tabla 10_fases_narrativas).</div>`}
   </section>
   <section class="block al-r"><div class="eyebrow">Red de relaciones<i>02</i></div><h3>Quién se relaciona con quién</h3>
-    <p class="sub">Personas en el círculo interior y entidades (lugares, organizaciones, armas, sustancias) en el exterior. El relleno del nodo indica el rol criminológico y el anillo, el nivel socioeconómico. El color y el trazo de la línea resumen el tono afectivo; la flecha apunta hacia quien está en posición subordinada. Toca un nodo para ver sus relaciones.</p>
+    <p class="sub">Personas en el círculo interior y entidades (lugares, organizaciones, armas, sustancias) en el exterior. El relleno del nodo indica el rol criminológico y el anillo, el nivel socioeconómico. El color y el trazo de la línea resumen el tono afectivo; la flecha apunta hacia quien está en posición subordinada. Toca un nodo para ver sus relaciones, o una línea para ver de qué se trata ese vínculo.</p>
     <div class="netgrid"><div class="netbox"><div id="netsvg">${network(e)}</div><div id="netleg">${netLegend()}</div></div><div class="detail" id="detail"></div></div>
   </section>
   <section class="block al-c"><div class="eyebrow"><i>03</i>Factores</div><h3>Por qué ocurrió</h3>
@@ -445,7 +455,7 @@ function network(e){
   let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Red de relaciones del episodio"><defs>${['afecto','hostil','ambivalente','neutro'].map(v=>`<marker id="m-${v}" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,1 L10,5 L0,9 z" fill="var(--v-${v})"/></marker>`).join('')}</defs>`;
   s+=`<circle cx="${cx}" cy="${cy}" r="${r1}" fill="none" stroke="var(--muted)" stroke-opacity=".25" stroke-dasharray="2 5"/><circle cx="${cx}" cy="${cy}" r="${r2}" fill="none" stroke="var(--muted)" stroke-opacity=".25" stroke-dasharray="2 5"/>`;
   // aristas persona-entidad
-  e.RE.forEach((r,i)=>{const a=pos['P:'+r.p],b=pos['E:'+r.e];if(!a||!b)return;s+=`<line class="edge pe" data-a="P:${r.p}" data-b="E:${r.e}" x1="${a.x}" y1="${a.y}" x2="${b.x}" y2="${b.y}" stroke="var(--muted)" stroke-width="1" stroke-dasharray="3 3" opacity=".55"/>`});
+  e.RE.forEach((r,i)=>{const a=pos['P:'+r.p],b=pos['E:'+r.e];if(!a||!b)return;s+=`<g class="edge-g" data-id="L:${i}" tabindex="0" aria-label="Vínculo entre persona y entidad"><line class="edge pe" data-a="P:${r.p}" data-b="E:${r.e}" x1="${a.x}" y1="${a.y}" x2="${b.x}" y2="${b.y}" stroke="var(--muted)" stroke-width="1" stroke-dasharray="3 3" opacity=".55"/><line class="hit" x1="${a.x}" y1="${a.y}" x2="${b.x}" y2="${b.y}"/></g>`});
   // aristas persona-persona (curvas suaves)
   e.R.forEach(r=>{const a=pos['P:'+r.a],b=pos['P:'+r.b];if(!a||!b)return;const v=valence(r);
     const mx=(a.x+b.x)/2,my=(a.y+b.y)/2,dx=b.x-a.x,dy=b.y-a.y,len=Math.hypot(dx,dy)||1,k=.12;
@@ -455,7 +465,8 @@ function network(e){
     const ms=r.asi==='from_domina'?`marker-end="url(#m-${v})"`:r.asi==='to_domina'?`marker-start="url(#m-${v})"`:'';
     const w=r.vp.includes('victimario_victima')?3.2:2;
     const da=v==='ambivalente'?'stroke-dasharray="7 5"':v==='neutro'?'stroke-dasharray="1.5 5"':'';
-    s+=`<path class="edge pp" data-a="P:${r.a}" data-b="P:${r.b}" d="M${sx},${sy} Q${qx},${qy} ${ex},${ey}" stroke="var(--v-${v})" stroke-width="${w}" ${da} ${ms}><title>${esc(r.vp.map(lab).join(', '))} · ${esc(r.va.join(', '))}</title></path>`});
+    const dd=`M${sx},${sy} Q${qx},${qy} ${ex},${ey}`;
+    s+=`<g class="edge-g" data-id="R:${r.id}" tabindex="0" aria-label="Relación entre ${esc(pName(e,r.a))} y ${esc(pName(e,r.b))}"><path class="edge pp" data-a="P:${r.a}" data-b="P:${r.b}" d="${dd}" stroke="var(--v-${v})" stroke-width="${w}" ${da} ${ms}/><path class="hit" d="${dd}"/></g>`});
   // nodos entidad
   e.E.forEach(en=>{const p=pos['E:'+en.id];const sz=en.cen==='alta'?11:en.cen==='media'?9:7;const left=Math.cos(p.a)<-0.2,right=Math.cos(p.a)>0.2;
     const tx=p.x+Math.cos(p.a)*(sz+6),ty=p.y+Math.sin(p.a)*(sz+6)+4;
@@ -471,6 +482,11 @@ function network(e){
     let tx,ty,anc;if(isPr){tx=q.x;ty=q.y+off+13;anc='middle'}else{const ca=Math.cos(q.a),sa=Math.sin(q.a);tx=q.x+ca*off;ty=q.y+sa*off+4;anc=ca<-0.25?'end':ca>0.25?'start':'middle';if(anc==='middle')ty=q.y+sa*(off+2)+(sa>0?11:-3)}
     s+=`<g class="node" data-id="P:${p.id}" tabindex="0" aria-label="${esc(p.n)}, ${esc(lab(rc))}, NSE ${p.ses||'sin dato'}"><circle class="ring" cx="${q.x}" cy="${q.y}" r="${R+(isPr?16:11)}"/>${prRing}${ring}${body}<text x="${tx}" y="${ty}" text-anchor="${anc}" style="font-weight:${isPr||p.rn==='protagonista'?600:400}">${esc(trunc(p.n,26))}</text></g>`});
   return s+`</svg>`}
+function pName(e,id){const p=e.P.find(q=>q.id===id);return p?p.n:id}
+function eName(e,id){const o=e.E.find(q=>q.id===id);return o?o.n:id}
+const VAL_LABEL={afecto:'tono afectivo positivo',hostil:'tono hostil',ambivalente:'tono ambivalente',neutro:'sin tono afectivo marcado'};
+function asiText(e,r){const A=pName(e,r.a),B=pName(e,r.b);
+  return r.asi==='from_domina'?`${A} domina a ${B}`:r.asi==='to_domina'?`${B} domina a ${A}`:r.asi==='par'?'relación entre pares':r.asi==='variable'?'poder variable':r.asi==='incierta'?'poder incierto':(r.asi?lab(r.asi):'')}
 function trunc(s,n){return s.length>n?s.slice(0,n-1)+'…':s}
 function netLegend(){const RL={victimario:'victimario',victima:'víctima',complice:'cómplice',autoridad:'autoridad',tercero_afectado:'tercero afectado',sin_rol_criminal:'sin rol criminal'};
   return `<div class="netlegend">${ROLES.map(r=>`<span><i class="sw" style="${r==='tercero_afectado'?'border:2px solid var(--r-tercero_afectado)':`background:var(--r-${r})`};${r==='autoridad'?'border-radius:3px':''}"></i>${RL[r]}</span>`).join('')}<span><i class="sw" style="background:var(--bg);border:1px solid var(--muted);border-radius:2px;transform:rotate(45deg) scale(.8)"></i>entidad</span><span><i class="sw" style="border:2.5px solid var(--sodio)"></i>protagonista</span></div>
@@ -480,6 +496,10 @@ let TIP=null;
 function tipFor(id){const e=current;const [k,x]=id.split(':');
   if(k==='P'){const p=e.P.find(q=>q.id===x);if(!p)return '';
     return `<b>${esc(p.n)}</b><span class="r">${esc([lab(p.rn),lab(p.rc),p.occ].filter(Boolean).join(' · '))}</span><div style="margin-top:4px"><span class="mono">NSE ${p.ses?p.ses+' · '+SES_LABEL[p.ses]:'sin dato'}</span></div>${p.se?`<div class="ev">${esc(p.se)}</div>`:''}`}
+  if(k==='R'){const r=e.R.find(q=>q.id===x);if(!r)return '';const v=valence(r);
+    return `<b>${esc(pName(e,r.a))} — ${esc(pName(e,r.b))}</b><span class="r">${esc(r.vp.map(lab).join(' · ')||'vínculo sin tipo')}</span><div style="margin-top:4px"><span class="mono">${esc(VAL_LABEL[v])}${r.va.length?': '+esc(r.va.join(', ')):''}</span></div>${asiText(e,r)?`<div class="r" style="margin-top:2px">${esc(asiText(e,r))}</div>`:''}${r.d?`<div class="ev">${esc(trunc(r.d,160))}</div>`:''}<div class="r" style="margin-top:6px;font-size:12.5px">Toca la línea para ver el detalle</div>`}
+  if(k==='L'){const r=e.RE[+x];if(!r)return '';
+    return `<b>${esc(pName(e,r.p))} — ${esc(eName(e,r.e))}</b><span class="r">${esc(lab(r.v)||'vínculo')}</span>${r.d?`<div class="ev">${esc(trunc(r.d,160))}</div>`:''}`}
   const o=e.E.find(q=>q.id===x);return o?`<b>${esc(o.n)}</b><span class="r">${esc([lab(o.tp),lab(o.st)].filter(Boolean).join(' · '))}</span>`:''}
 function showTip(g,ev){if(!TIP){TIP=document.createElement('div');TIP.className='tip';document.body.appendChild(TIP)}
   TIP.innerHTML=tipFor(g.dataset.id);TIP.hidden=false;
@@ -487,16 +507,31 @@ function showTip(g,ev){if(!TIP){TIP=document.createElement('div');TIP.className=
   const w=TIP.offsetWidth,h=TIP.offsetHeight;if(x+w>innerWidth-8)x=Math.max(8,x-w-28);if(y+h>innerHeight-8)y=Math.max(8,innerHeight-h-8);TIP.style.left=x+'px';TIP.style.top=y+'px'}
 function hideTip(){if(TIP)TIP.hidden=true}
 function wireNet(){
-  document.querySelectorAll('.netbox .node').forEach(g=>{const go=()=>{selNode=g.dataset.id;focusOn=true;renderDetail()};g.addEventListener('click',go);g.addEventListener('keydown',k=>{if(k.key==='Enter')go()});
+  document.querySelectorAll('.netbox .node, .netbox .edge-g').forEach(g=>{const go=()=>{selNode=g.dataset.id;focusOn=true;renderDetail()};g.addEventListener('click',go);g.addEventListener('keydown',k=>{if(k.key==='Enter')go()});
     g.addEventListener('pointermove',ev=>{if(ev.pointerType==='mouse')showTip(g,ev)});g.addEventListener('pointerleave',hideTip);g.addEventListener('focus',()=>showTip(g));g.addEventListener('blur',hideTip)});
 }
-function highlight(){if(!focusOn)return;const id=selNode;const nb=new Set([id]);
+function highlight(){if(!focusOn)return;const id=selNode;
+  document.querySelectorAll('.netbox .edge-g').forEach(g=>g.classList.toggle('sel',g.dataset.id===id));
+  if(/^[RL]:/.test(id)){const g=document.querySelector(`.netbox .edge-g[data-id="${id}"]`);const ed=g&&g.querySelector('.edge');const nb=new Set(ed?[ed.dataset.a,ed.dataset.b]:[]);
+    document.querySelectorAll('.netbox .edge').forEach(l=>l.classList.toggle('dim',l!==ed));
+    document.querySelectorAll('.netbox .node').forEach(n=>{n.classList.toggle('sel',false);n.classList.toggle('dim',!nb.has(n.dataset.id))});return}
+  const nb=new Set([id]);
   document.querySelectorAll('.netbox .edge').forEach(l=>{const on=l.dataset.a===id||l.dataset.b===id;l.classList.toggle('dim',!on);if(on){nb.add(l.dataset.a);nb.add(l.dataset.b)}});
   document.querySelectorAll('.netbox .node').forEach(n=>{n.classList.toggle('sel',n.dataset.id===id);n.classList.toggle('dim',!nb.has(n.dataset.id))})}
 function renderDetail(){const e=current,D=document.getElementById('detail');if(!D)return;highlight();
   const [kind,id]=selNode.split(':');const pn=x=>e.P.find(p=>p.id===x),en=x=>e.E.find(p=>p.id===x);
   let h='';
-  if(kind==='P'){const p=pn(id);if(!p){D.innerHTML='';return}
+  if(kind==='R'){const r=e.R.find(q=>q.id===id);if(!r){D.innerHTML='';return}const v=valence(r);
+    h=`<div class="mono" style="color:var(--muted);text-align:left">Relación ${esc(String(r.id).split('_').pop())}</div><div class="relhead"><span class="to" data-go="P:${r.a}">${esc(pName(e,r.a))}</span><span class="arrow">—</span><span class="to" data-go="P:${r.b}">${esc(pName(e,r.b))}</span></div>
+      ${r.d?`<p class="desc">${esc(r.d)}</p>`:''}
+      <h5>Poder</h5><p style="margin:0">${esc(asiText(e,r))||'sin dato'}</p>
+      <h5>Vínculos prácticos</h5><div class="tags">${r.vp.map(x=>`<span class="tag">${esc(lab(x))}</span>`).join('')||'<span style="color:var(--muted)">sin dato</span>'}</div>
+      <h5>Vínculos afectivos · <span style="color:var(--v-${v})">${esc(v)}</span></h5><div class="tags">${r.va.map(x=>`<span class="vtag" style="color:var(--v-${POS.has(x)?'afecto':NEG.has(x)?'hostil':'neutro'})">${esc(x)}</span>`).join('')||'<span style="color:var(--muted)">sin dato</span>'}</div>
+      <p style="margin:16px 0 0;font-size:14px;color:var(--muted)">Toca un nombre para ver a esa persona.</p>`}
+  else if(kind==='L'){const r=e.RE[+id];if(!r){D.innerHTML='';return}
+    h=`<div class="mono" style="color:var(--muted);text-align:left">Vínculo persona–entidad</div><div class="relhead"><span class="to" data-go="P:${r.p}">${esc(pName(e,r.p))}</span><span class="arrow">—</span><span class="to" data-go="E:${r.e}">${esc(eName(e,r.e))}</span></div>
+      <h5>Tipo de vínculo</h5><p style="margin:0">${esc(lab(r.v))||'sin dato'}${r.asi?` · ${esc(lab(r.asi))}`:''}</p>${r.d?`<h5>Descripción</h5><p style="margin:0">${esc(r.d)}</p>`:''}`}
+  else if(kind==='P'){const p=pn(id);if(!p){D.innerHTML='';return}
     h=`<h4>${esc(p.n)}</h4><div class="who">${[lab(p.rn),lab(p.rc),p.sx,lab(p.edad),p.occ].filter(Boolean).map(esc).join(' · ')}</div><p class="desc">${esc(p.d)}</p>
       <h5>Nivel socioeconómico</h5><div class="sesscale">${[1,2,3,4,5].map(n=>`<span class="${p.ses==n?'on':''}" style="background:var(--s${n});color:var(--s${n}t)">${n}</span>`).join('')}<span style="width:auto;color:var(--muted);font-family:var(--f-body);font-size:12px;padding-left:6px">${p.ses?SES_LABEL[p.ses]:'sin dato'}</span></div>${p.se?`<p style="margin:0 0 4px;font-size:12.5px;color:var(--muted)">${esc(p.se)}</p>`:''}`;
     const rs=e.R.filter(r=>r.a===id||r.b===id);
