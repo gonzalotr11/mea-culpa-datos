@@ -4,218 +4,268 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="description" content="Explorador de la base relacional construida a partir de los subtítulos de 121 episodios de Mea Culpa.">
-<title>Explorador Mea Culpa</title>
+<title>Mea Culpa, como datos</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Young+Serif&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=JetBrains+Mono:wght@400;500&display=swap">
 <style>
-/* Layout: expediente de dos columnas. Filtros a la izquierda, casos o ficha del episodio a la derecha. */
+/* Identidad "Luz de calle": noche para orientarse, papel para leer, ámbar de farol para lo clave. */
 :root{
-  --bg:#F1F2EF; --panel:#FFFFFF; --sunk:#E7E9E5; --ink:#1A1F26; --muted:#5B636D; --line:#D6D9D4; --accent:#8C2A22; --accent-soft:#F3E3E0;
-  --ph-antecedentes:#6F7F95; --ph-escalada:#B8892B; --ph-detonante:#D2652B; --ph-crimen:#9E2B25; --ph-proceso_legal:#3B6A8F; --ph-consecuencias:#5F8269;
-  --r-victimario:#1A1F26; --r-victima:#B5372D; --r-complice:#6B5B7A; --r-autoridad:#3B6A8F; --r-tercero_afectado:#C9A466; --r-sin_rol_criminal:#B4BAB3; --r-testigo:#B4BAB3;
-  --v-afecto:#2F8075; --v-hostil:#B5372D; --v-ambivalente:#B8892B; --v-neutro:#9AA19A;
- --s1:#E6E3F1; --s2:#C2BBE0; --s3:#9387C6; --s4:#6253A6; --s5:#372A78; --s1t:#1A1F26; --s2t:#1A1F26; --s3t:#FFFFFF; --s4t:#FFFFFF; --s5t:#FFFFFF;
-  --f-display:"Young Serif",Georgia,"Times New Roman",serif;
-  --f-body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
-  --f-mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+  --bg:#FBF8F1; --panel:#FFFFFF; --sunk:#F2EDE2; --ink:#1B1D24; --muted:#5A5F6B; --line:#E6E0D3; --link:#33419E; --accent-soft:#FCEFD0;
+  --night:#111733; --night-line:#2A3156; --night-ink:#FBF8F1; --night-muted:#AEB3C9; --sodio:#F4A51C;
+  --ph-antecedentes:#8592AE; --ph-escalada:#E0A526; --ph-detonante:#EA6A2A; --ph-crimen:#C41E3A; --ph-proceso_legal:#3D4FB8; --ph-consecuencias:#2B8A7E;
+  --r-victimario:#1B1D24; --r-victima:#C41E3A; --r-complice:#6B5B7A; --r-autoridad:#3D4FB8; --r-tercero_afectado:#8A8D96; --r-sin_rol_criminal:#C9C4B8; --r-testigo:#C9C4B8;
+  --v-afecto:#2B8A7E; --v-hostil:#C41E3A; --v-ambivalente:#D08F10; --v-neutro:#9A9DA6;
+  --s1:#DCEBB4; --s2:#B2D57A; --s3:#7CB342; --s4:#3F7D24; --s5:#1F4D17; --s1t:#1B1D24; --s2t:#1B1D24; --s3t:#1B1D24; --s4t:#FFFFFF; --s5t:#FFFFFF;
+  --f-display:"Big Shoulders Display","Arial Narrow","Roboto Condensed",sans-serif;
+  --f-body:"Newsreader",Georgia,"Times New Roman",serif;
+  --f-mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  --bg:#13161A; --panel:#1B1F25; --sunk:#22272E; --ink:#E5E7E9; --muted:#99A1AB; --line:#2F353D; --accent:#E57366; --accent-soft:#3A2321;
-  --ph-antecedentes:#8C9BB1; --ph-escalada:#D4A645; --ph-detonante:#E98049; --ph-crimen:#E0574D; --ph-proceso_legal:#6497C0; --ph-consecuencias:#82A88B;
-  --r-victimario:#E5E7E9; --r-victima:#E0574D; --r-complice:#A08FB0; --r-autoridad:#6497C0; --r-tercero_afectado:#D4B57A; --r-sin_rol_criminal:#5C636B; --r-testigo:#5C636B;
-  --v-afecto:#4DB3A5; --v-hostil:#E0574D; --v-ambivalente:#D4A645; --v-neutro:#6B727A;
- --s1:#3A3552; --s2:#574D84; --s3:#7C6FB4; --s4:#A799DB; --s5:#D5CCF7; --s1t:#E5E7E9; --s2t:#E5E7E9; --s3t:#FFFFFF; --s4t:#13161A; --s5t:#13161A;
- color-scheme:dark}}
+  --bg:#0E1328; --panel:#161C38; --sunk:#1C2343; --ink:#ECEAF2; --muted:#A3A9C2; --line:#2A3156; --link:#A9B6FF; --accent-soft:#3A3016;
+  --night:#0A0E20; --night-line:#252C50;
+  --ph-antecedentes:#9AA6C2; --ph-escalada:#E8B444; --ph-detonante:#F0803F; --ph-crimen:#EE5266; --ph-proceso_legal:#7D8CF0; --ph-consecuencias:#45B3A5;
+  --r-victimario:#ECEAF2; --r-victima:#EE5266; --r-complice:#A894BC; --r-autoridad:#7D8CF0; --r-tercero_afectado:#8F95AE; --r-sin_rol_criminal:#4A5170; --r-testigo:#4A5170;
+  --v-afecto:#45B3A5; --v-hostil:#EE5266; --v-ambivalente:#E8B444; --v-neutro:#6E7491;
+  color-scheme:dark}}
 :root[data-theme="dark"]{
-  --bg:#13161A; --panel:#1B1F25; --sunk:#22272E; --ink:#E5E7E9; --muted:#99A1AB; --line:#2F353D; --accent:#E57366; --accent-soft:#3A2321;
-  --ph-antecedentes:#8C9BB1; --ph-escalada:#D4A645; --ph-detonante:#E98049; --ph-crimen:#E0574D; --ph-proceso_legal:#6497C0; --ph-consecuencias:#82A88B;
-  --r-victimario:#E5E7E9; --r-victima:#E0574D; --r-complice:#A08FB0; --r-autoridad:#6497C0; --r-tercero_afectado:#D4B57A; --r-sin_rol_criminal:#5C636B; --r-testigo:#5C636B;
-  --v-afecto:#4DB3A5; --v-hostil:#E0574D; --v-ambivalente:#D4A645; --v-neutro:#6B727A;
- --s1:#3A3552; --s2:#574D84; --s3:#7C6FB4; --s4:#A799DB; --s5:#D5CCF7; --s1t:#E5E7E9; --s2t:#E5E7E9; --s3t:#FFFFFF; --s4t:#13161A; --s5t:#13161A;
- color-scheme:dark}
+  --bg:#0E1328; --panel:#161C38; --sunk:#1C2343; --ink:#ECEAF2; --muted:#A3A9C2; --line:#2A3156; --link:#A9B6FF; --accent-soft:#3A3016;
+  --night:#0A0E20; --night-line:#252C50;
+  --ph-antecedentes:#9AA6C2; --ph-escalada:#E8B444; --ph-detonante:#F0803F; --ph-crimen:#EE5266; --ph-proceso_legal:#7D8CF0; --ph-consecuencias:#45B3A5;
+  --r-victimario:#ECEAF2; --r-victima:#EE5266; --r-complice:#A894BC; --r-autoridad:#7D8CF0; --r-tercero_afectado:#8F95AE; --r-sin_rol_criminal:#4A5170; --r-testigo:#4A5170;
+  --v-afecto:#45B3A5; --v-hostil:#EE5266; --v-ambivalente:#E8B444; --v-neutro:#6E7491;
+  color-scheme:dark}
 *{box-sizing:border-box}
 [hidden]{display:none!important}
 html,body{background:var(--bg);color:var(--ink)}
-body{font-family:var(--f-body);font-size:14px;line-height:1.5;padding-inline:16px;padding-block:0 48px}
+body{margin:0;font-family:var(--f-body);font-size:16px;line-height:1.5;padding-bottom:64px}
 button{font:inherit;color:inherit}
-:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-.mono{font-family:var(--f-mono);font-size:12px}
-.wrap{max-width:1320px;margin:0 auto}
+a{color:var(--link)}
+:focus-visible{outline:2px solid var(--sodio);outline-offset:2px}
+.mono{font-family:var(--f-mono);font-size:12.5px}
+.wrap{max-width:1320px;margin:0 auto;padding-inline:clamp(16px,4vw,48px)}
+.hl-key{background:linear-gradient(transparent 58%,var(--sodio) 58%);color:inherit}
 
-header.top{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:12px 24px;padding-block:22px 14px;border-bottom:1px solid var(--line)}
-.brand h1{font-family:var(--f-display);font-weight:400;font-size:30px;line-height:1.05;margin:0;letter-spacing:-.01em}
-.brand p{margin:4px 0 0;color:var(--muted);max-width:62ch}
-.tabs{display:flex;gap:4px}
-.tab{border:1px solid var(--line);background:transparent;padding:6px 14px;border-radius:999px;cursor:pointer;color:var(--muted)}
-.tab[aria-selected="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
-.kpis{display:flex;flex-wrap:wrap;gap:4px 22px;padding-block:10px;color:var(--muted);font-size:13px}
-.kpis b{font-family:var(--f-mono);font-weight:500;color:var(--ink);font-variant-numeric:tabular-nums;margin-right:4px}
+/* cabecera nocturna */
+header.mast{background:var(--night);color:var(--night-ink);border-bottom:1px solid var(--night-line)}
+.topnav{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 24px;min-height:72px;padding-block:10px;border-bottom:1px solid var(--night-line)}
+.brandmark{display:inline-flex;align-items:center;gap:12px;color:var(--night-ink);text-decoration:none;font-family:var(--f-display);font-weight:800;font-size:23px;letter-spacing:.02em;text-transform:uppercase}
+.thread{display:inline-flex;align-items:center;gap:4px}
+.thread i{width:8px;height:8px;border-radius:50%;background:var(--sodio)}
+.thread i.o{background:transparent;border:1.5px solid var(--sodio)}
+.thread b{width:18px;height:1.5px;background:var(--sodio)}
+.navr{display:flex;flex-wrap:wrap;align-items:center;gap:6px}
+.tab{min-height:40px;border:1px solid var(--night-line);background:transparent;padding:0 16px;border-radius:999px;cursor:pointer;color:var(--night-muted);font-size:16px}
+.tab:hover{color:var(--night-ink)}
+.tab[aria-selected="true"]{background:var(--night-ink);color:var(--night);border-color:var(--night-ink)}
+.navr a{color:var(--night-muted);padding:0 10px;min-height:40px;display:inline-flex;align-items:center;font-size:16px}
+.navr a:hover{color:var(--sodio)}
+.hero{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(0,1fr);gap:28px 64px;align-items:end;padding-block:44px 48px}
+@media (max-width:900px){.hero{grid-template-columns:minmax(0,1fr);padding-block:32px 36px}}
+.hero h1{margin:0;font-family:var(--f-display);font-weight:800;font-size:clamp(44px,7vw,80px);line-height:.88;text-transform:uppercase;letter-spacing:.005em;text-wrap:balance}
+.hero h1 span{color:var(--sodio)}
+.hero p{margin:18px 0 0;max-width:58ch;font-size:19px;line-height:1.5;color:#D9DCEA}
+.hero p small{display:block;margin-top:10px;font-size:14px;color:var(--night-muted);font-style:italic}
+.kpis{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 24px;font-family:var(--f-mono)}
+.kpis span{display:flex;flex-direction:column;gap:2px;border-top:1px solid var(--night-line);padding-top:10px;font-size:13px;color:var(--night-muted)}
+.kpis b{font-size:30px;font-weight:500;color:var(--night-ink);font-variant-numeric:tabular-nums;line-height:1.1}
 
-.layout{display:grid;grid-template-columns:290px minmax(0,1fr);gap:28px;padding-top:18px}
-@media (max-width:860px){.layout{grid-template-columns:minmax(0,1fr)}}
-aside.filters{display:flex;flex-direction:column;gap:18px;align-self:start;position:sticky;top:calc(env(safe-area-inset-top,0px) + 12px);max-height:calc(100vh - 24px);overflow:auto;padding-right:4px}
-@media (max-width:860px){aside.filters{position:static;max-height:none}}
-.fgroup h3{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 6px;font-weight:600;display:flex;justify-content:space-between}
-.fgroup h3 button{border:0;background:none;color:var(--accent);font-size:11px;letter-spacing:0;text-transform:none;cursor:pointer;padding:0}
-.chips{display:flex;flex-wrap:wrap;gap:4px}
-.chip{border:1px solid var(--line);background:var(--panel);border-radius:4px;padding:2px 7px;font-size:12px;cursor:pointer;display:inline-flex;gap:5px;align-items:baseline;line-height:1.5}
-.chip .n{font-family:var(--f-mono);font-size:10.5px;color:var(--muted)}
-.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
-.chip[aria-pressed="true"] .n{color:inherit;opacity:.7}
+.layout{display:grid;grid-template-columns:290px minmax(0,1fr);gap:40px;padding-top:32px}
+@media (max-width:860px){.layout{grid-template-columns:minmax(0,1fr);gap:28px}}
+aside.filters{display:flex;flex-direction:column;gap:22px;align-self:start;position:sticky;top:calc(env(safe-area-inset-top,0px) + 14px);max-height:calc(100vh - 28px);overflow:auto;padding-right:6px}
+.ftoggle{display:none}
+@media (max-width:860px){aside.filters{position:static;max-height:none}aside.filters:not(.open){display:none}.ftoggle{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 18px;border-radius:999px;border:1.5px solid var(--ink);background:transparent;cursor:pointer;font-size:16px;justify-self:start}.ftoggle[aria-expanded="true"]{background:var(--night);color:var(--night-ink);border-color:var(--night)}}
+.fgroup h3{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 8px;font-weight:500;display:flex;justify-content:space-between;gap:8px}
+.fgroup h3 button{border:0;background:none;color:var(--link);font-family:var(--f-body);font-size:13px;letter-spacing:0;text-transform:none;cursor:pointer;padding:0}
+.chips{display:flex;flex-wrap:wrap;gap:5px}
+.chip{border:1px solid var(--line);background:var(--panel);border-radius:999px;min-height:32px;padding:3px 12px;font-size:14px;cursor:pointer;display:inline-flex;gap:6px;align-items:center;line-height:1.3}
+.chip:hover{border-color:var(--ink)}
+.chip .n{font-family:var(--f-mono);font-size:11px;color:var(--muted)}
+.chip[aria-pressed="true"]{background:var(--night);color:var(--night-ink);border-color:var(--night)}
+.chip[aria-pressed="true"]::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--sodio);flex:none}
+.chip[aria-pressed="true"] .n{color:var(--night-muted)}
 .chip.zero{opacity:.38}
-input[type=search]{width:100%;border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:6px;padding:7px 10px;font:inherit}
-.reset{align-self:flex-start;border:0;background:none;color:var(--accent);cursor:pointer;padding:0;font-size:13px}
+input[type=search]{width:100%;min-height:44px;border:1.5px solid var(--line);background:var(--panel);color:var(--ink);border-radius:999px;padding:0 18px;font:inherit;font-size:16px}
+input[type=search]:focus{border-color:var(--ink);outline:none}
+.reset{align-self:flex-start;border:0;background:none;color:var(--link);cursor:pointer;padding:0;font-size:15px}
 
 /* lista */
-.listhead{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:10px}
-.listhead h2{font-family:var(--f-display);font-weight:400;font-size:22px;margin:0}
-.legend{display:flex;flex-wrap:wrap;gap:4px 12px;font-size:11.5px;color:var(--muted)}
-.legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:4px;vertical-align:-1px}
-.eplist{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:10px}
-.ep{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:12px 14px;cursor:pointer;text-align:left;display:flex;flex-direction:column;gap:6px;min-width:0}
-.ep:hover{border-color:var(--muted)}
-.ep .id{display:flex;justify-content:space-between;gap:8px;color:var(--muted)}
-.ep h4{margin:0;font-size:15px;font-weight:600;line-height:1.3}
-.ep p{margin:0;color:var(--muted);font-size:12.5px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
-.strip{display:flex;gap:2px;height:7px}
-.strip span{flex:1;border-radius:1px}
-.strip.empty{background:repeating-linear-gradient(45deg,var(--line) 0 3px,transparent 3px 6px);border-radius:1px}
-.tags{display:flex;flex-wrap:wrap;gap:4px}
-.tag{font-size:11px;padding:1px 6px;border-radius:3px;background:var(--sunk);color:var(--ink)}
-.tag.main{background:var(--accent-soft);color:var(--accent)}
-.empty-state{padding:40px 0;color:var(--muted)}
+.listhead{display:flex;justify-content:space-between;align-items:flex-end;gap:12px 24px;flex-wrap:wrap;margin-bottom:16px}
+.listhead h2{font-family:var(--f-display);font-weight:800;font-size:40px;line-height:.95;margin:0;text-transform:uppercase}
+.legend{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:14px;color:var(--muted)}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:5px;vertical-align:0}
+.eplist{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
+.ep{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px 18px;cursor:pointer;text-align:left;display:flex;flex-direction:column;gap:9px;min-width:0}
+.ep:hover{border-color:var(--ink)}
+.ep .id{display:flex;justify-content:space-between;align-items:center;gap:8px;color:var(--muted)}
+.code{display:inline-flex;align-items:center;gap:7px;background:var(--night);color:var(--sodio);font-family:var(--f-mono);font-size:12px;padding:3px 10px;border-radius:999px;white-space:nowrap}
+.code::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--sodio)}
+.ep h4{margin:0;font-family:var(--f-display);font-weight:800;font-size:25px;line-height:1;text-transform:uppercase;letter-spacing:.01em}
+.ep p{margin:0;color:var(--muted);font-size:15px;line-height:1.45;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.strip{display:flex;gap:2px;height:6px}
+.strip span{flex:1}
+.strip span:first-child{border-radius:3px 0 0 3px}.strip span:last-child{border-radius:0 3px 3px 0}
+.strip.empty{background:repeating-linear-gradient(45deg,var(--line) 0 3px,transparent 3px 6px);border-radius:3px}
+.tags{display:flex;flex-wrap:wrap;gap:5px}
+.tag{font-size:13px;padding:1px 9px;border-radius:999px;background:var(--sunk);color:var(--ink)}
+.tag.main{background:var(--ink);color:var(--bg)}
+.empty-state{padding:40px 0;color:var(--muted);font-style:italic}
 
 /* ficha */
-.back{border:0;background:none;color:var(--accent);cursor:pointer;padding:0;margin-bottom:10px}
-.ficha-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:18px 32px;padding-bottom:18px;border-bottom:1px solid var(--line)}
-@media (max-width:980px){.ficha-head{grid-template-columns:minmax(0,1fr)}}
-.ficha-head .eyebrow{color:var(--muted)}
-.ficha-head h2{font-family:var(--f-display);font-weight:400;font-size:34px;line-height:1.08;margin:4px 0 10px;text-wrap:balance}
-.ficha-head .res{margin:0;max-width:72ch;font-size:15px}
-dl.meta{display:grid;grid-template-columns:auto minmax(0,1fr);gap:5px 14px;margin:0;font-size:13px;align-content:start}
-dl.meta dt{color:var(--muted)}
-dl.meta dd{margin:0}
-.navep{display:flex;gap:8px;margin-top:10px}
-.navep button{border:1px solid var(--line);background:var(--panel);border-radius:4px;padding:3px 10px;cursor:pointer;font-size:12px}
-.navep button:disabled{opacity:.4;cursor:default}
+.back{border:0;background:none;color:var(--link);cursor:pointer;padding:0;margin-bottom:6px;font-size:15px;min-height:32px}
+.ficha-head{display:flex;flex-direction:column;align-items:center;text-align:center;gap:12px;padding-bottom:28px;border-bottom:1.5px solid var(--ink)}
+.ficha-head .eyebrow{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:8px 12px;color:var(--muted)}
+.ficha-head h2{font-family:var(--f-display);font-weight:800;font-size:clamp(40px,6vw,70px);line-height:.92;margin:0;text-transform:uppercase;text-wrap:balance;max-width:20ch}
+.ficha-head .res{margin:0;max-width:68ch;font-size:18px;line-height:1.55}
+.navep{display:flex;gap:8px;justify-content:center}
+.navep button{border:1.5px solid var(--ink);background:transparent;border-radius:999px;min-height:38px;padding:0 16px;cursor:pointer;font-family:var(--f-mono);font-size:13px}
+.navep button:hover:not(:disabled){background:var(--night);color:var(--night-ink);border-color:var(--night)}
+.navep button:disabled{opacity:.35;cursor:default}
+dl.meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:0;margin:22px 0 0;width:100%;text-align:left;border-top:1px solid var(--line)}
+dl.meta>div{padding:12px 16px 12px 0;border-bottom:1px solid var(--line);min-width:0}
+dl.meta dt{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:3px}
+dl.meta dd{margin:0;font-size:15px}
 
-section.block{padding-block:26px 6px}
-section.block>h3{font-family:var(--f-display);font-weight:400;font-size:21px;margin:0 0 4px}
-section.block>.sub{color:var(--muted);margin:0 0 14px;max-width:80ch;font-size:13px}
+section.block{padding-block:44px 6px}
+section.block .eyebrow{font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:10px}
+section.block .eyebrow i{width:26px;height:26px;border-radius:50%;background:var(--night);color:var(--sodio);display:inline-flex;align-items:center;justify-content:center;font-style:normal;font-size:11.5px;letter-spacing:0}
+section.block>h3{font-family:var(--f-display);font-weight:800;font-size:clamp(32px,4vw,44px);line-height:.95;text-transform:uppercase;margin:8px 0 8px}
+section.block>.sub{color:var(--muted);margin:0 0 18px;max-width:72ch;font-size:16px}
+section.block.al-r{text-align:right}
+section.block.al-r .eyebrow{justify-content:flex-end}
+section.block.al-r>.sub{margin-left:auto}
+section.block.al-r>:not(.eyebrow):not(h3):not(.sub){text-align:left}
+section.block.al-c{text-align:center}
+section.block.al-c .eyebrow{justify-content:center}
+section.block.al-c>.sub{margin-inline:auto}
+section.block.al-c>:not(.eyebrow):not(h3):not(.sub){text-align:left}
 
-.swim{overflow-x:auto;background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:10px 8px}
+.swim{overflow-x:auto;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:12px 10px}
 .swim svg{display:block}
-.swim text{fill:var(--muted);font-family:var(--f-body);font-size:11px}
+.swim text{fill:var(--muted);font-family:var(--f-body);font-size:12.5px}
+.swim text.mono{font-family:var(--f-mono);font-size:10.5px}
 .swim .dot{cursor:pointer}
-.events{list-style:none;margin:14px 0 0;padding:0;display:flex;flex-direction:column}
-.events li{display:grid;grid-template-columns:30px 120px minmax(0,1fr);gap:4px 12px;padding:9px 0;border-top:1px solid var(--line)}
-@media (max-width:600px){.events li{grid-template-columns:30px minmax(0,1fr)}.events li .ph{grid-column:2}.events li .body{grid-column:2}}
+.events{list-style:none;margin:20px 0 0;padding:0;display:flex;flex-direction:column;position:relative}
+.events::before{content:"";position:absolute;left:15px;top:14px;bottom:14px;width:1.5px;background:var(--line)}
+.events li{display:grid;grid-template-columns:32px 140px minmax(0,1fr);gap:4px 16px;padding:10px 8px 10px 0;border-radius:10px;position:relative}
+@media (max-width:600px){.events li{grid-template-columns:32px minmax(0,1fr)}.events li .ph{grid-column:2}.events li .body{grid-column:2}}
 .events li.hl{background:var(--accent-soft)}
-.events .num{font-family:var(--f-mono);color:var(--muted);text-align:right;font-variant-numeric:tabular-nums}
-.ph{font-size:11px;font-weight:600;letter-spacing:.03em;display:flex;align-items:flex-start;gap:6px}
-.ph i{width:9px;height:9px;border-radius:50%;flex:none;margin-top:4px}
+.events .num{width:32px;height:32px;border-radius:50%;background:var(--bg);border:2px solid var(--line);font-family:var(--f-mono);font-size:11.5px;color:var(--ink);display:inline-flex;align-items:center;justify-content:center;font-variant-numeric:tabular-nums;position:relative;z-index:1}
+.ph{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);display:flex;align-items:flex-start;gap:7px;padding-top:7px}
+.ph i{width:9px;height:9px;border-radius:50%;flex:none;margin-top:2px}
+.events .body{padding-top:4px}
 .events .ev{font-weight:600}
-.events .act{color:var(--muted);font-size:12.5px}
-.events .d{margin:2px 0 0}
+.events .act{color:var(--muted);font-size:14px}
+.events .d{margin:3px 0 0;font-size:16px;line-height:1.5}
 
-.netgrid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:16px}
+.netgrid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:18px}
 @media (max-width:1060px){.netgrid{grid-template-columns:minmax(0,1fr)}}
-.netbar{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;padding:4px 6px 8px;font-size:12px;color:var(--muted)}
-.seg{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden}
-.seg button{border:0;background:transparent;padding:3px 11px;cursor:pointer;color:var(--muted);font-size:12px}
-.seg button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
-.sesnum{font-family:var(--f-mono);font-weight:500;pointer-events:none}
-.tip{position:fixed;z-index:20;max-width:300px;background:var(--panel);color:var(--ink);border:1px solid var(--line);border-radius:6px;padding:8px 10px;font-size:12.5px;line-height:1.4;box-shadow:0 6px 20px rgba(0,0,0,.18);pointer-events:none}
-.tip b{display:block;font-size:13px}
-.tip .r{color:var(--muted)}
-.tip .ev{margin-top:5px;color:var(--muted)}
-.sesscale{display:flex;gap:3px;align-items:center;margin:2px 0 6px}
-.sesscale span{width:26px;height:16px;border-radius:3px;display:inline-flex;align-items:center;justify-content:center;font-family:var(--f-mono);font-size:10.5px;border:1px solid transparent}
-.sesscale span.on{outline:2px solid var(--accent);outline-offset:1px}
-.netbox{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:8px;min-width:0}
+.tip{position:fixed;z-index:20;max-width:300px;background:var(--night);color:var(--night-ink);border-radius:10px;padding:10px 12px;font-size:14px;line-height:1.4;box-shadow:0 8px 24px rgba(10,14,32,.28);pointer-events:none}
+.tip b{display:block;font-family:var(--f-display);font-weight:800;font-size:19px;text-transform:uppercase;letter-spacing:.01em}
+.tip .r{color:var(--night-muted)}
+.tip .mono{color:var(--sodio)}
+.tip .ev{margin-top:6px;color:#D9DCEA;font-style:italic}
+.sesscale{display:flex;gap:4px;align-items:center;margin:2px 0 8px}
+.sesscale span{width:30px;height:22px;border-radius:6px;display:inline-flex;align-items:center;justify-content:center;font-family:var(--f-mono);font-size:11.5px}
+.sesscale span.on{outline:2.5px solid var(--sodio);outline-offset:2px}
+.netbox{background:var(--sunk);border-radius:18px;padding:10px;min-width:0}
 .netbox svg{width:100%;height:auto;display:block}
-.netbox text{font-family:var(--f-body);font-size:11.5px;fill:var(--ink)}
-.netbox text.ent{fill:var(--muted);font-size:10.5px}
+.netbox text{font-family:var(--f-body);font-size:15px;fill:var(--ink)}
+.netbox text.ent{fill:var(--muted);font-size:13px;font-style:italic}
 .node{cursor:pointer}
-.node .ring{fill:none;stroke:var(--accent);stroke-width:2.5;opacity:0}
+.node .ring{fill:none;stroke:var(--link);stroke-width:2;stroke-dasharray:3 3;opacity:0}
 .node.sel .ring{opacity:1}
 .edge{fill:none;stroke-linecap:round}
 .dim{opacity:.12}
-.netlegend{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:11.5px;color:var(--muted);padding:8px 6px 2px}
-.netlegend span{display:inline-flex;align-items:center;gap:5px}
-.sw{width:11px;height:11px;border-radius:50%;display:inline-block}
-.ln{width:16px;height:3px;border-radius:2px;display:inline-block}
-.detail{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:14px 16px;min-width:0;max-height:640px;overflow:auto}
-.detail h4{font-family:var(--f-display);font-weight:400;font-size:20px;margin:0 0 4px}
-.detail .who{color:var(--muted);font-size:12.5px;margin-bottom:8px}
+.netlegend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:13.5px;color:var(--muted);padding:10px 8px 2px}
+.netlegend span{display:inline-flex;align-items:center;gap:6px}
+.sw{width:12px;height:12px;border-radius:50%;display:inline-block}
+.ln{width:24px;height:0;border-top:3px solid;display:inline-block}
+.detail{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:18px 20px;min-width:0;max-height:680px;overflow:auto}
+.detail h4{font-family:var(--f-display);font-weight:800;font-size:30px;line-height:1;text-transform:uppercase;margin:0 0 6px}
+.detail .who{color:var(--muted);font-size:14px;margin-bottom:10px}
 .detail .desc{margin:0 0 12px}
-.detail h5{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:14px 0 6px;font-weight:600}
-.rel{border-top:1px solid var(--line);padding:8px 0;display:flex;flex-direction:column;gap:4px}
-.rel .to{font-weight:600;cursor:pointer}
-.rel .to:hover{color:var(--accent)}
-.rel p{margin:0;font-size:12.5px;color:var(--muted)}
-.vtag{font-size:11px;padding:0 6px;border-radius:3px;border:1px solid var(--line)}
+.detail h5{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:18px 0 8px;font-weight:500}
+.rel{border-top:1px solid var(--line);padding:10px 0;display:flex;flex-direction:column;gap:5px}
+.rel .to{font-weight:600;cursor:pointer;text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:3px}
+.rel .to:hover{text-decoration-color:var(--sodio)}
+.rel p{margin:0;font-size:14.5px;color:var(--muted)}
+.vtag{font-size:12.5px;padding:0 8px;border-radius:999px;border:1.5px solid currentColor}
 
-.factors{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
-.fcard{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:14px 16px;min-width:0}
-.fcard h4{margin:0 0 8px;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600}
-.fcard .big{font-size:16px;font-weight:600;margin-bottom:4px}
-.fcard p{margin:6px 0 0;font-size:13px}
-.vul{border-top:1px solid var(--line);padding:6px 0;font-size:13px}
+.factors{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+.fcard{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:18px 20px;min-width:0}
+.fcard h4{margin:0 0 10px;font-family:var(--f-mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:500}
+.fcard .big{font-family:var(--f-display);font-weight:800;font-size:28px;line-height:1;text-transform:uppercase;margin-bottom:8px}
+.fcard p{margin:8px 0 0;font-size:15px}
+.vul{border-top:1px solid var(--line);padding:8px 0;font-size:15px}
 .vul b{font-weight:600}
 
-.tables{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
-.tblwrap{overflow-x:auto;background:var(--panel);border:1px solid var(--line);border-radius:6px}
-table{border-collapse:collapse;font-size:12px;width:100%}
-th,td{text-align:left;padding:6px 10px;border-bottom:1px solid var(--line);vertical-align:top}
-th{font-family:var(--f-mono);font-weight:500;font-size:11px;color:var(--muted);background:var(--sunk);position:sticky;top:0;white-space:nowrap}
+.tables{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
+.tblwrap{overflow-x:auto;background:var(--panel);border:1px solid var(--line);border-radius:14px}
+table{border-collapse:collapse;font-size:14px;width:100%}
+th,td{text-align:left;padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:var(--f-mono);font-weight:500;font-size:11.5px;color:var(--night-muted);background:var(--night);position:sticky;top:0;white-space:nowrap}
 td{max-width:420px}
-td.k{font-family:var(--f-mono);font-size:11px;white-space:nowrap;color:var(--accent)}
+td.k{font-family:var(--f-mono);font-size:12px;white-space:nowrap;color:var(--link)}
 
 /* modelo */
-.model{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;padding-top:18px}
+.model{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;padding-top:36px}
 @media (max-width:900px){.model{grid-template-columns:minmax(0,1fr)}}
-.model h2{font-family:var(--f-display);font-weight:400;font-size:24px;margin:0 0 8px}
-.model p{max-width:66ch}
-.pipeline{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:12px 0 20px}
-.pipeline span{background:var(--panel);border:1px solid var(--line);border-radius:4px;padding:5px 10px;font-size:12.5px}
+.model h2{font-family:var(--f-display);font-weight:800;font-size:44px;line-height:.95;text-transform:uppercase;margin:0 0 12px}
+.model .right h2{text-align:right}
+.model p{max-width:64ch;font-size:17px}
+.pipeline{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:16px 0 22px}
+.pipeline span{background:var(--night);color:var(--night-ink);border-radius:999px;padding:6px 14px;font-size:15px}
+.pipeline span:last-child{color:var(--sodio)}
 .pipeline em{color:var(--muted);font-style:normal}
-.tlist{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:8px}
-.tcard{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:10px 12px}
-.tcard .nm{font-family:var(--f-mono);font-size:12px;font-weight:500}
-.tcard .cnt{float:right;font-family:var(--f-mono);font-size:12px;color:var(--muted)}
-.tcard .layer{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
-.tcard p{margin:4px 0 0;font-size:12.5px;color:var(--muted)}
-.erd{overflow-x:auto;background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:12px}
+.tlist{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px}
+.tcard{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:12px 14px}
+.tcard .nm{font-family:var(--f-mono);font-size:12.5px;font-weight:500}
+.tcard .cnt{float:right;font-family:var(--f-mono);font-size:12.5px;color:var(--muted)}
+.tcard .layer{font-family:var(--f-mono);font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.tcard p{margin:6px 0 0;font-size:14.5px;color:var(--muted)}
+.erd{overflow-x:auto;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:14px}
 .erd svg text{font-family:var(--f-mono);font-size:11px;fill:var(--ink)}
-.notes{margin-top:18px;background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:12px 16px;font-size:13px}
-.notes h4{margin:0 0 6px;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.notes{margin-top:20px;background:var(--sunk);border-radius:16px;padding:16px 20px;font-size:15px}
+.notes h4{margin:0 0 8px;font-family:var(--f-mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:500}
 .notes ul{margin:0;padding-left:18px}
-@media (prefers-reduced-motion:no-preference){.ep,.chip{transition:border-color .15s,background .15s}}
+footer.foot{margin-top:56px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:14px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 24px}
+@media (prefers-reduced-motion:no-preference){.ep,.chip,.navep button{transition:border-color .15s,background .15s,color .15s}}
 img{max-width:100%}
 </style>
 </head>
 <body>
 
+<header class="mast">
+  <div class="wrap">
+    <nav class="topnav" aria-label="Principal">
+      <a class="brandmark" href="./"><span class="thread" aria-hidden="true"><i></i><b></b><i class="o"></i></span>Mea Culpa, como datos</a>
+      <div class="navr">
+        <div role="tablist" style="display:flex;gap:6px">
+          <button class="tab" role="tab" id="tab-ep" aria-selected="true">Episodios</button>
+          <button class="tab" role="tab" id="tab-model" aria-selected="false">Modelo de datos</button>
+        </div>
+        <a href="https://github.com/gonzalotr11/mea-culpa-datos">Repositorio</a>
+      </div>
+    </nav>
+    <div class="hero">
+      <div>
+        <h1>121 relatos de delitos, <span>convertidos en datos</span></h1>
+        <p>Quién aparece, cómo se relaciona con quién y qué condiciones hicieron posible cada crimen, en 14 temporadas de un programa de televisión chileno. Una base relacional de 15 tablas construida a partir de los subtítulos.<small>Los nombres de los personajes son ficticios.</small></p>
+      </div>
+      <div class="kpis" id="kpis" aria-live="polite"></div>
+    </div>
+  </div>
+</header>
 <div class="wrap">
-  <header class="top">
-    <div class="brand">
-      <h1>Mea Culpa, como datos</h1>
-      <p>121 episodios del programa de TV chileno convertidos desde sus subtítulos en una base relacional de 15 tablas: personajes, vínculos, entidades, fases del relato y factores del delito.</p>
-    </div>
-    <div class="tabs" role="tablist">
-      <button class="tab" role="tab" id="tab-ep" aria-selected="true">Episodios</button>
-      <button class="tab" role="tab" id="tab-model" aria-selected="false">Modelo de datos</button>
-    </div>
-  </header>
-  <div class="kpis" id="kpis"></div>
 
   <main id="view-ep" class="layout">
+    <button class="ftoggle" id="ftoggle" aria-expanded="false" aria-controls="filters">Filtros y búsqueda</button>
     <aside class="filters" id="filters"></aside>
     <div id="main" style="min-width:0"></div>
   </main>
   <main id="view-model" hidden></main>
+  <footer class="foot"><span>Base y explorador: Gonzalo Torres · <a href="https://gonzalotr11.github.io">gonzalotr11.github.io</a></span><span>Codificación hecha por un modelo de lenguaje a partir de subtítulos automáticos. Útil para explorar y enseñar; no reemplaza una codificación validada.</span></footer>
 </div>
 
 <script src="assets/data.js"></script>
@@ -260,6 +310,7 @@ function matches(e,skip){
 function filtered(){return EPS.filter(e=>matches(e))}
 
 const F=document.getElementById('filters');
+document.getElementById('ftoggle').onclick=ev=>{const o=F.classList.toggle('open');ev.currentTarget.setAttribute('aria-expanded',o)};
 function renderFilters(){
   let h=`<div><input type="search" id="q" placeholder="Buscar nombre, lugar o palabra…" value="${esc(state.q)}" aria-label="Buscar"></div>`;
   for(const g of GROUPS){
@@ -291,7 +342,7 @@ F.addEventListener('input',ev=>{if(ev.target.id==='q'){state.q=ev.target.value}e
 function renderKpis(list){
   const s=(f)=>list.reduce((a,e)=>a+f(e),0);
   document.getElementById('kpis').innerHTML=[
-    [list.length,'episodios'],[s(e=>e.P.length),'personajes'],[s(e=>e.R.length),'relaciones entre personas'],[s(e=>e.E.length),'entidades'],[s(e=>e.RE.length),'vínculos persona–entidad'],[s(e=>e.F.length),'eventos narrativos']
+    [list.length,'episodios en la selección'],[s(e=>e.P.length),'personajes'],[s(e=>e.R.length),'relaciones entre personas'],[s(e=>e.F.length),'eventos narrativos']
   ].map(([n,l])=>`<span><b>${n.toLocaleString('es-CL')}</b>${l}</span>`).join('')}
 
 /* ---------- lista ---------- */
@@ -303,7 +354,7 @@ function renderList(){
   const list=filtered();
   M.innerHTML=`<div class="listhead"><h2>${list.length} episodio${list.length===1?'':'s'}</h2>${phaseLegend()}</div>`+
    (list.length?`<div class="eplist">${list.map(e=>`<button class="ep" data-id="${e.id}">
-      <div class="id mono"><span>${code(e)}</span><span>${esc(e.per)}</span></div>
+      <div class="id mono"><span class="code">${code(e)}</span><span>${esc(e.per)}</span></div>
       <h4>${esc(title(e))}</h4>
       ${strip(e)}
       <p>${esc(e.res)}</p>
@@ -313,9 +364,8 @@ function renderList(){
 M.addEventListener('click',ev=>{const b=ev.target.closest('.ep');if(b)openEp(b.dataset.id)});
 
 /* ---------- ficha ---------- */
-let selNode=null,focusOn=false;let colorBy='rol';try{colorBy=localStorage.getItem('mc-colorby')||'rol'}catch(_){}
+let selNode=null,focusOn=false;
 const SES_LABEL={1:'bajo',2:'medio-bajo',3:'medio',4:'medio-alto',5:'alto'};
-const sesFill=p=>p.ses?`var(--s${p.ses})`:'var(--panel)';
 function openEp(id,push=true){const e=EPS.find(x=>x.id===id);if(!e)return;current=e;selNode='P:'+(protag(e)?.id||'');focusOn=false;
   if(push){try{history.replaceState(null,'','#'+id)}catch(_){}}
   renderEp();window.scrollTo({top:0})}
@@ -325,35 +375,35 @@ function renderEp(){hideTip&&hideTip();
   const prev=i>0?list[i-1]:null,next=i>=0&&i<list.length-1?list[i+1]:null;
   M.innerHTML=`<button class="back" id="back">← Volver a ${list.length} episodios</button>
   <div class="ficha-head">
-    <div style="min-width:0">
-      <div class="eyebrow mono">${code(e)} · ${e.id}</div>
+    <div style="min-width:0;display:flex;flex-direction:column;align-items:center;gap:12px">
+      <div class="eyebrow mono"><span class="code">${code(e)}</span><span>${e.id}</span></div>
       <h2>${esc(title(e))}</h2>
       <p class="res">${esc(e.res)}</p>
       <div class="navep"><button id="prev" ${prev?'':'disabled'}>← ${prev?esc(code(prev)):'Anterior'}</button><button id="next" ${next?'':'disabled'}>${next?esc(code(next)):'Siguiente'} →</button></div>
     </div>
     <dl class="meta">
-      <dt>Periodo</dt><dd>${esc(e.per)||'—'}</dd>
-      <dt>Lugar</dt><dd>${esc(e.loc)||'—'}${e.locs?`<div style="color:var(--muted);font-size:12px">${esc(e.locs)}</div>`:''}</dd>
-      <dt>Tipo de caso</dt><dd>${esc(lab(e.caso))}</dd>
-      <dt>Delitos</dt><dd class="tags">${e.del.map(d=>`<span class="tag ${d[1]?'main':''}">${esc(lab(d[0]))}</span>`).join('')}</dd>
-      <dt>Víctimas</dt><dd>${esc(lab(e.nv))}${e.hom?' · homicidio':''}${e.men?' · menor involucrado':''}</dd>
-      ${DATA.playlists&&DATA.playlists[e.t]?`<dt>Fuente</dt><dd><a href="${esc(DATA.playlists[e.t])}" target="_blank" rel="noopener" style="color:var(--accent)">Temporada ${e.t} en YouTube ↗</a></dd>`:''}
-      <dt>Temas</dt><dd class="tags">${e.tem.map(t=>`<span class="tag">${esc(t)}</span>`).join('')}</dd>
+      <div><dt>Periodo</dt><dd>${esc(e.per)||'—'}</dd></div>
+      <div><dt>Lugar</dt><dd>${esc(e.loc)||'—'}${e.locs?`<div style="color:var(--muted);font-size:13.5px">${esc(e.locs)}</div>`:''}</dd></div>
+      <div><dt>Tipo de caso</dt><dd>${esc(lab(e.caso))}</dd></div>
+      <div><dt>Delitos</dt><dd class="tags">${e.del.map(d=>`<span class="tag ${d[1]?'main':''}">${esc(lab(d[0]))}</span>`).join('')}</dd></div>
+      <div><dt>Víctimas</dt><dd>${esc(lab(e.nv))}${e.hom?' · homicidio':''}${e.men?' · menor involucrado':''}</dd></div>
+      ${DATA.playlists&&DATA.playlists[e.t]?`<div><dt>Fuente</dt><dd><a href="${esc(DATA.playlists[e.t])}" target="_blank" rel="noopener">Temporada ${e.t} en YouTube ↗</a></dd></div>`:''}
+      <div style="grid-column:1/-1"><dt>Temas</dt><dd class="tags">${e.tem.map(t=>`<span class="tag">${esc(t)}</span>`).join('')}</dd></div>
     </dl>
   </div>
-  <section class="block"><h3>Hilo narrativo</h3>
+  <section class="block"><div class="eyebrow"><i>01</i>Hilo narrativo</div><h3>Cómo avanza el relato</h3>
     <p class="sub">Cada punto es un evento, en el orden en que ocurre en el relato. La línea muestra cómo el caso se mueve entre fases: un salto hacia arriba indica que el relato vuelve atrás.</p>
     ${e.F.length?swimlane(e)+eventList(e):`<div class="empty-state">Este episodio todavía no tiene capa narrativa (tabla 10_fases_narrativas).</div>`}
   </section>
-  <section class="block"><h3>Red de relaciones</h3>
-    <p class="sub">Personas en el anillo interior, entidades (lugares, organizaciones, armas, sustancias) en el exterior. El color de la línea resume los vínculos afectivos de la relación; la flecha apunta hacia quien está en posición subordinada. Pasa el cursor sobre un nodo para ver su nivel socioeconómico, o cambia el color de los nodos a NSE. Toca un nodo para ver sus relaciones.</p>
-    <div class="netgrid"><div class="netbox"><div class="netbar">Color de los nodos <span class="seg" role="group" aria-label="Color de los nodos"><button id="cb-rol" aria-pressed="${colorBy==='rol'}">Rol criminológico</button><button id="cb-ses" aria-pressed="${colorBy==='ses'}">Nivel socioeconómico</button></span></div><div id="netsvg">${network(e)}</div><div id="netleg">${netLegend()}</div></div><div class="detail" id="detail"></div></div>
+  <section class="block al-r"><div class="eyebrow">Red de relaciones<i>02</i></div><h3>Quién se relaciona con quién</h3>
+    <p class="sub">Personas en el círculo interior y entidades (lugares, organizaciones, armas, sustancias) en el exterior. El relleno del nodo indica el rol criminológico y el anillo, el nivel socioeconómico. El color y el trazo de la línea resumen el tono afectivo; la flecha apunta hacia quien está en posición subordinada. Toca un nodo para ver sus relaciones.</p>
+    <div class="netgrid"><div class="netbox"><div id="netsvg">${network(e)}</div><div id="netleg">${netLegend()}</div></div><div class="detail" id="detail"></div></div>
   </section>
-  <section class="block"><h3>Por qué ocurrió</h3>
+  <section class="block al-c"><div class="eyebrow"><i>03</i>Factores</div><h3>Por qué ocurrió</h3>
     <p class="sub">Mecanismo causal, condiciones de contexto, factores que facilitaron el delito y vulnerabilidades de las víctimas.</p>
     ${factors(e)}
   </section>
-  <section class="block"><h3>Las filas detrás de esta ficha</h3>
+  <section class="block"><div class="eyebrow"><i>04</i>Tablas</div><h3>Las filas detrás de esta ficha</h3>
     <p class="sub">Todo lo anterior se arma uniendo tablas por <span class="mono">id_episodio</span>, <span class="mono">id_personaje</span>, <span class="mono">id_entidad</span> e <span class="mono">id_relacion</span>. Elige una tabla para ver sus filas para este episodio.</p>
     <div class="tables" id="tblchips"></div><div id="tbl"></div>
   </section>`;
@@ -368,11 +418,11 @@ function swimlane(e){
   const n=e.F.length,cw=Math.max(46,Math.min(70,760/n)),L=112,top=10,rh=26,W=L+cw*n+16,H=top+rh*6+28;
   const x=i=>L+cw*i+cw/2,y=f=>top+rh*Math.max(0,PHASES.indexOf(f))+rh/2;
   let s=`<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-label="Secuencia de fases">`;
-  PHASES.forEach((p,j)=>{s+=`<rect x="${L-6}" y="${top+rh*j+2}" width="${W-L-4}" height="${rh-4}" rx="3" fill="var(--ph-${p})" opacity=".09"/><text x="${L-12}" y="${top+rh*j+rh/2+4}" text-anchor="end">${PH_LABEL[p]}</text>`});
+  PHASES.forEach((p,j)=>{s+=`<rect x="${L-6}" y="${top+rh*j+2}" width="${W-L-4}" height="${rh-4}" rx="3" fill="var(--ph-${p})" opacity=".1"/><text x="${L-12}" y="${top+rh*j+rh/2+4}" text-anchor="end">${PH_LABEL[p]}</text>`});
   s+=`<polyline points="${e.F.map((f,i)=>x(i)+','+y(f.f)).join(' ')}" fill="none" stroke="var(--muted)" stroke-width="1.5" stroke-linejoin="round" opacity=".6"/>`;
   e.F.forEach((f,i)=>{s+=`<g class="dot" data-i="${i}" tabindex="0"><title>${f.o}. ${esc(lab(f.ev))}</title><circle cx="${x(i)}" cy="${y(f.f)}" r="7" fill="var(--ph-${f.f})" stroke="var(--panel)" stroke-width="2"/></g><text x="${x(i)}" y="${H-8}" text-anchor="middle" class="mono">${f.o}</text>`});
   return `<div class="swim">${s}</svg></div>`}
-function eventList(e){return `<ol class="events" id="events">${e.F.map((f,i)=>`<li id="ev${i}"><span class="num">${f.o}</span><span class="ph" style="color:var(--ph-${f.f})"><i style="background:var(--ph-${f.f})"></i>${PH_LABEL[f.f]||esc(f.f)}</span><div class="body"><span class="ev">${esc(lab(f.ev))}</span>${f.act?` <span class="act">· ${esc(f.act)}</span>`:''}<p class="d">${esc(f.d)}</p></div></li>`).join('')}</ol>`}
+function eventList(e){return `<ol class="events" id="events">${e.F.map((f,i)=>`<li id="ev${i}"><span class="num" style="border-color:var(--ph-${f.f})">${f.o}</span><span class="ph"><i style="background:var(--ph-${f.f})"></i>${PH_LABEL[f.f]||esc(f.f)}</span><div class="body"><span class="ev">${esc(lab(f.ev))}</span>${f.act?` <span class="act">· ${esc(f.act)}</span>`:''}<p class="d">${esc(f.d)}</p></div></li>`).join('')}</ol>`}
 function wireSwim(){document.querySelectorAll('.swim .dot').forEach(g=>{const go=()=>{document.querySelectorAll('.events li').forEach(l=>l.classList.remove('hl'));const li=document.getElementById('ev'+g.dataset.i);if(li){li.classList.add('hl');li.scrollIntoView({block:'nearest',behavior:'smooth'})}};g.addEventListener('click',go);g.addEventListener('keydown',k=>{if(k.key==='Enter')go()})})}
 
 /* red */
@@ -393,32 +443,39 @@ function network(e){
   const off=ents.length?ents[0].a:0;ents.forEach((o,i)=>{const a=off+2*Math.PI*i/Math.max(1,ents.length);pos['E:'+o.en.id]={x:cx+r2*Math.cos(a),y:cy+r2*Math.sin(a),a}});
   NET={pos,e};
   let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Red de relaciones del episodio"><defs>${['afecto','hostil','ambivalente','neutro'].map(v=>`<marker id="m-${v}" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,1 L10,5 L0,9 z" fill="var(--v-${v})"/></marker>`).join('')}</defs>`;
-  s+=`<circle cx="${cx}" cy="${cy}" r="${r1}" fill="none" stroke="var(--line)" stroke-dasharray="2 4"/><circle cx="${cx}" cy="${cy}" r="${r2}" fill="none" stroke="var(--line)" stroke-dasharray="2 4"/>`;
+  s+=`<circle cx="${cx}" cy="${cy}" r="${r1}" fill="none" stroke="var(--muted)" stroke-opacity=".25" stroke-dasharray="2 5"/><circle cx="${cx}" cy="${cy}" r="${r2}" fill="none" stroke="var(--muted)" stroke-opacity=".25" stroke-dasharray="2 5"/>`;
   // aristas persona-entidad
   e.RE.forEach((r,i)=>{const a=pos['P:'+r.p],b=pos['E:'+r.e];if(!a||!b)return;s+=`<line class="edge pe" data-a="P:${r.p}" data-b="E:${r.e}" x1="${a.x}" y1="${a.y}" x2="${b.x}" y2="${b.y}" stroke="var(--muted)" stroke-width="1" stroke-dasharray="3 3" opacity=".55"/>`});
   // aristas persona-persona (curvas suaves)
   e.R.forEach(r=>{const a=pos['P:'+r.a],b=pos['P:'+r.b];if(!a||!b)return;const v=valence(r);
     const mx=(a.x+b.x)/2,my=(a.y+b.y)/2,dx=b.x-a.x,dy=b.y-a.y,len=Math.hypot(dx,dy)||1,k=.12;
-    const qx=mx-dy*k,qy=my+dx*k;const shrink=15;
+    const qx=mx-dy*k,qy=my+dx*k;const shrink=24;
     const ex=b.x-(b.x-qx)/Math.hypot(b.x-qx,b.y-qy)*shrink,ey=b.y-(b.y-qy)/Math.hypot(b.x-qx,b.y-qy)*shrink;
     const sx=a.x-(a.x-qx)/Math.hypot(a.x-qx,a.y-qy)*shrink,sy=a.y-(a.y-qy)/Math.hypot(a.x-qx,a.y-qy)*shrink;
     const ms=r.asi==='from_domina'?`marker-end="url(#m-${v})"`:r.asi==='to_domina'?`marker-start="url(#m-${v})"`:'';
-    const w=r.vp.includes('victimario_victima')?3:1.8;
-    s+=`<path class="edge pp" data-a="P:${r.a}" data-b="P:${r.b}" d="M${sx},${sy} Q${qx},${qy} ${ex},${ey}" stroke="var(--v-${v})" stroke-width="${w}" ${ms}><title>${esc(r.vp.map(lab).join(', '))} · ${esc(r.va.join(', '))}</title></path>`});
+    const w=r.vp.includes('victimario_victima')?3.2:2;
+    const da=v==='ambivalente'?'stroke-dasharray="7 5"':v==='neutro'?'stroke-dasharray="1.5 5"':'';
+    s+=`<path class="edge pp" data-a="P:${r.a}" data-b="P:${r.b}" d="M${sx},${sy} Q${qx},${qy} ${ex},${ey}" stroke="var(--v-${v})" stroke-width="${w}" ${da} ${ms}><title>${esc(r.vp.map(lab).join(', '))} · ${esc(r.va.join(', '))}</title></path>`});
   // nodos entidad
   e.E.forEach(en=>{const p=pos['E:'+en.id];const sz=en.cen==='alta'?11:en.cen==='media'?9:7;const left=Math.cos(p.a)<-0.2,right=Math.cos(p.a)>0.2;
     const tx=p.x+Math.cos(p.a)*(sz+6),ty=p.y+Math.sin(p.a)*(sz+6)+4;
-    s+=`<g class="node" data-id="E:${en.id}" tabindex="0"><title>${esc(en.n)} (${esc(lab(en.tp))})</title><rect class="ring" x="${p.x-sz-4}" y="${p.y-sz-4}" width="${2*sz+8}" height="${2*sz+8}" rx="3"/><rect x="${p.x-sz}" y="${p.y-sz}" width="${2*sz}" height="${2*sz}" rx="2" fill="var(--sunk)" stroke="var(--muted)" stroke-width="1.2" transform="rotate(45 ${p.x} ${p.y})"/><text class="ent" x="${tx}" y="${ty}" text-anchor="${left?'end':right?'start':'middle'}">${esc(trunc(en.n,20))}</text></g>`});
-  // nodos persona
-  e.P.forEach(p=>{const q=pos['P:'+p.id];const isPr=p===pr;const R=isPr?20:p.rn==='protagonista'?15:p.rn==='antagonista'?13:p.rn==='personaje_menor'?8:11;
-    const c=colorBy==='ses'?sesFill(p):`var(--r-${p.rc}, var(--r-sin_rol_criminal))`;
-    const noSes=colorBy==='ses'&&!p.ses;
-    let tx,ty,anc;if(isPr){tx=q.x;ty=q.y+R+15;anc='middle'}else{const ca=Math.cos(q.a),sa=Math.sin(q.a);tx=q.x+ca*(R+7);ty=q.y+sa*(R+7)+4;anc=ca<-0.25?'end':ca>0.25?'start':'middle';if(anc==='middle')ty=q.y+sa*(R+9)+(sa>0?10:-2)}
-    s+=`<g class="node" data-id="P:${p.id}" tabindex="0" aria-label="${esc(p.n)}, ${esc(lab(p.rc))}, NSE ${p.ses||'sin dato'}"><circle class="ring" cx="${q.x}" cy="${q.y}" r="${R+5}"/><circle cx="${q.x}" cy="${q.y}" r="${R}" fill="${c}" stroke="${noSes?'var(--muted)':'var(--panel)'}" stroke-width="${noSes?1.2:2}" ${noSes?'stroke-dasharray="2 2"':''}/>${colorBy==='ses'?`<text class="sesnum" x="${q.x}" y="${q.y+(R>=11?4:3.3)}" text-anchor="middle" style="font-size:${R>=13?12:R>=11?10.5:9}px;fill:${p.ses?`var(--s${p.ses}t)`:'var(--muted)'}">${p.ses||'?'}</text>`:''}${p.rn==='protagonista'?`<circle cx="${q.x}" cy="${q.y}" r="${R+2}" fill="none" stroke="${c}" stroke-width="1"/>`:''}<text x="${tx}" y="${ty}" text-anchor="${anc}" style="font-weight:${isPr||p.rn==='protagonista'?600:400}">${esc(trunc(p.n,26))}</text></g>`});
+    s+=`<g class="node" data-id="E:${en.id}" tabindex="0"><title>${esc(en.n)} (${esc(lab(en.tp))})</title><rect class="ring" x="${p.x-sz-4}" y="${p.y-sz-4}" width="${2*sz+8}" height="${2*sz+8}" rx="3"/><rect x="${p.x-sz}" y="${p.y-sz}" width="${2*sz}" height="${2*sz}" rx="2" fill="var(--bg)" stroke="var(--muted)" stroke-width="1.4" transform="rotate(45 ${p.x} ${p.y})"/><text class="ent" x="${tx}" y="${ty}" text-anchor="${left?'end':right?'start':'middle'}">${esc(trunc(en.n,20))}</text></g>`});
+  // nodos persona: relleno = rol, anillo = nivel socioeconómico, anillo ámbar = protagonista
+  e.P.forEach(p=>{const q=pos['P:'+p.id];const isPr=p===pr;const R=isPr?19:p.rn==='protagonista'?15:p.rn==='antagonista'?13:p.rn==='personaje_menor'?8:11;
+    const rc=p.rc||'sin_rol_criminal';const hollow=rc==='tercero_afectado';const sq=rc==='autoridad';
+    const fill=hollow?'var(--sunk)':`var(--r-${rc}, var(--r-sin_rol_criminal))`;const st=hollow?'var(--r-tercero_afectado)':'var(--sunk)';const sw=hollow?2:1.5;
+    const sesR=R+5.5;const ring=p.ses?`<circle cx="${q.x}" cy="${q.y}" r="${sesR}" fill="none" stroke="var(--s${p.ses})" stroke-width="4"/>`:`<circle cx="${q.x}" cy="${q.y}" r="${sesR-1}" fill="none" stroke="var(--muted)" stroke-width="1.2" stroke-dasharray="2 3" opacity=".7"/>`;
+    const body=sq?`<rect x="${q.x-R*.9}" y="${q.y-R*.9}" width="${R*1.8}" height="${R*1.8}" rx="${Math.max(3,R*.25)}" fill="${fill}" stroke="${st}" stroke-width="${sw}"/>`:`<circle cx="${q.x}" cy="${q.y}" r="${R}" fill="${fill}" stroke="${st}" stroke-width="${sw}"/>`;
+    const prRing=isPr?`<circle cx="${q.x}" cy="${q.y}" r="${R+11}" fill="none" stroke="var(--sodio)" stroke-width="2.5"/>`:'';
+    const off=R+(isPr?14:9);
+    let tx,ty,anc;if(isPr){tx=q.x;ty=q.y+off+13;anc='middle'}else{const ca=Math.cos(q.a),sa=Math.sin(q.a);tx=q.x+ca*off;ty=q.y+sa*off+4;anc=ca<-0.25?'end':ca>0.25?'start':'middle';if(anc==='middle')ty=q.y+sa*(off+2)+(sa>0?11:-3)}
+    s+=`<g class="node" data-id="P:${p.id}" tabindex="0" aria-label="${esc(p.n)}, ${esc(lab(rc))}, NSE ${p.ses||'sin dato'}"><circle class="ring" cx="${q.x}" cy="${q.y}" r="${R+(isPr?16:11)}"/>${prRing}${ring}${body}<text x="${tx}" y="${ty}" text-anchor="${anc}" style="font-weight:${isPr||p.rn==='protagonista'?600:400}">${esc(trunc(p.n,26))}</text></g>`});
   return s+`</svg>`}
 function trunc(s,n){return s.length>n?s.slice(0,n-1)+'…':s}
-function netLegend(){return `<div class="netlegend">${colorBy==='ses'?[1,2,3,4,5].map(n=>`<span><i class="sw" style="background:var(--s${n})"></i>${n} ${SES_LABEL[n]}</span>`).join('')+`<span><i class="sw" style="border:1px dashed var(--muted)"></i>sin dato</span>`:ROLES.map(r=>`<span><i class="sw" style="background:var(--r-${r})"></i>${lab(r)}</span>`).join('')}<span><i class="sw" style="background:var(--sunk);border:1px solid var(--muted);border-radius:2px;transform:rotate(45deg) scale(.8)"></i>entidad</span></div>
-  <div class="netlegend">${[['afecto','afecto (amor, protección…)'],['hostil','hostil (miedo, odio…)'],['ambivalente','ambivalente (ambos)'],['neutro','neutro']].map(([v,l])=>`<span><i class="ln" style="background:var(--v-${v})"></i>${l}</span>`).join('')}<span><i class="ln" style="background:var(--muted);height:4px"></i>línea gruesa: victimario–víctima</span></div>`}
+function netLegend(){const RL={victimario:'victimario',victima:'víctima',complice:'cómplice',autoridad:'autoridad',tercero_afectado:'tercero afectado',sin_rol_criminal:'sin rol criminal'};
+  return `<div class="netlegend">${ROLES.map(r=>`<span><i class="sw" style="${r==='tercero_afectado'?'border:2px solid var(--r-tercero_afectado)':`background:var(--r-${r})`};${r==='autoridad'?'border-radius:3px':''}"></i>${RL[r]}</span>`).join('')}<span><i class="sw" style="background:var(--bg);border:1px solid var(--muted);border-radius:2px;transform:rotate(45deg) scale(.8)"></i>entidad</span><span><i class="sw" style="border:2.5px solid var(--sodio)"></i>protagonista</span></div>
+  <div class="netlegend"><span>Anillo, nivel socioeconómico:</span>${[1,2,3,4,5].map(n=>`<span><i class="sw" style="border:3.5px solid var(--s${n})"></i>${n} ${SES_LABEL[n]}</span>`).join('')}<span><i class="sw" style="border:1.2px dashed var(--muted)"></i>sin dato</span></div>
+  <div class="netlegend">${[['afecto','solid','afecto (amor, protección…)'],['hostil','solid','hostil (miedo, odio…)'],['ambivalente','dashed','ambivalente (ambos)'],['neutro','dotted','neutro']].map(([v,t,l])=>`<span><i class="ln" style="border-top-color:var(--v-${v});border-top-style:${t}"></i>${l}</span>`).join('')}<span><i class="ln" style="border-top-color:var(--muted);border-top-width:4px"></i>línea gruesa: victimario–víctima</span></div>`}
 let TIP=null;
 function tipFor(id){const e=current;const [k,x]=id.split(':');
   if(k==='P'){const p=e.P.find(q=>q.id===x);if(!p)return '';
@@ -432,9 +489,7 @@ function hideTip(){if(TIP)TIP.hidden=true}
 function wireNet(){
   document.querySelectorAll('.netbox .node').forEach(g=>{const go=()=>{selNode=g.dataset.id;focusOn=true;renderDetail()};g.addEventListener('click',go);g.addEventListener('keydown',k=>{if(k.key==='Enter')go()});
     g.addEventListener('pointermove',ev=>{if(ev.pointerType==='mouse')showTip(g,ev)});g.addEventListener('pointerleave',hideTip);g.addEventListener('focus',()=>showTip(g));g.addEventListener('blur',hideTip)});
-  ['rol','ses'].forEach(m=>{const b=document.getElementById('cb-'+m);if(b)b.onclick=()=>{colorBy=m;try{localStorage.setItem('mc-colorby',m)}catch(_){}
-    document.getElementById('cb-rol').setAttribute('aria-pressed',m==='rol');document.getElementById('cb-ses').setAttribute('aria-pressed',m==='ses');
-    document.getElementById('netsvg').innerHTML=network(current);document.getElementById('netleg').innerHTML=netLegend();hideTip();wireNet();highlight()}})}
+}
 function highlight(){if(!focusOn)return;const id=selNode;const nb=new Set([id]);
   document.querySelectorAll('.netbox .edge').forEach(l=>{const on=l.dataset.a===id||l.dataset.b===id;l.classList.toggle('dim',!on);if(on){nb.add(l.dataset.a);nb.add(l.dataset.b)}});
   document.querySelectorAll('.netbox .node').forEach(n=>{n.classList.toggle('sel',n.dataset.id===id);n.classList.toggle('dim',!nb.has(n.dataset.id))})}
@@ -508,7 +563,7 @@ const TABLES=[
 const CNT_KEY={'01_episodios':'01_episodios','02_episodios_delitos':'02_epi_delitos','03_episodios_temas':'03_epi_temas','04_personajes':'04_personajes','05_relaciones':'05_relaciones','06_vinculos_practicos':'06_vinc_practicos','07_vinculos_afectivos':'07_vinc_afectivos','08_entidades':'08_entidades','09_relaciones_pers_ent':'09_rel_pers_entidad','10_fases_narrativas':'10_fases_narrativas','11_mecanismos_causales':'11_mecanismos','12_condiciones_estructurales':'12_condiciones','13_habilitadores':'13_habilitadores','14_vulnerabilidades':'14_vulnerabilidades'};
 function erd(){
   // diagrama simple: episodio al centro, tablas hijas alrededor
-  const B=(x,y,w,t,keys,hl)=>`<g><rect x="${x}" y="${y}" width="${w}" height="${20+keys.length*15}" rx="4" fill="var(--${hl?'accent-soft':'sunk'})" stroke="var(--line)"/><text x="${x+8}" y="${y+14}" style="font-weight:600">${t}</text>${keys.map((k,i)=>`<text x="${x+8}" y="${y+31+i*15}" style="fill:var(--muted)">${k}</text>`).join('')}</g>`;
+  const B=(x,y,w,t,keys,hl)=>`<g><rect x="${x}" y="${y}" width="${w}" height="${20+keys.length*15}" rx="4" fill="var(--${hl?'accent-soft':'sunk'})" stroke="var(--${hl?'sodio':'line'})"/><text x="${x+8}" y="${y+14}" style="font-weight:600">${t}</text>${keys.map((k,i)=>`<text x="${x+8}" y="${y+31+i*15}" style="fill:var(--muted)">${k}</text>`).join('')}</g>`;
   const L=(x1,y1,x2,y2)=>`<path d="M${x1},${y1} C${(x1+x2)/2},${y1} ${(x1+x2)/2},${y2} ${x2},${y2}" fill="none" stroke="var(--muted)" stroke-width="1"/>`;
   let s=`<svg width="720" height="400" viewBox="0 0 720 400" role="img" aria-label="Diagrama de relaciones entre tablas">`;
   s+=L(170,200,250,60)+L(170,200,250,150)+L(170,200,250,250)+L(170,200,250,340)+L(410,60,480,40)+L(410,60,480,120)+L(410,150,480,200)+L(410,150,480,120)+L(410,60,480,280)+L(410,150,480,280)+L(170,200,250,250);
@@ -525,7 +580,7 @@ function erd(){
 function renderModel(){
   const C=DATA.counts;
   document.getElementById('view-model').innerHTML=`<div class="model">
-   <div style="min-width:0"><h2>De subtítulos a tablas</h2>
+   <div style="min-width:0"><h2>De subtítulos <span class="hl-key">a tablas</span></h2>
     <p>Cada episodio de Mea Culpa es un relato largo y desordenado. La base lo descompone en unidades que se pueden contar y cruzar: quién aparece, cómo se relaciona con quién, qué objetos y lugares importan, en qué orden pasan las cosas y qué condiciones lo hicieron posible.</p>
     <div class="pipeline"><span>Subtítulos de YouTube</span><em>→</em><span>Transcripción por episodio</span><em>→</em><span>Extracción estructurada</span><em>→</em><span>15 tablas unidas por claves</span></div>
     <div class="erd">${erd()}</div>
@@ -536,7 +591,7 @@ function renderModel(){
       <li>Dos episodios no tienen ningún personaje marcado como protagonista; 35 tienen más de uno.</li>
     </ul></div>
    </div>
-   <div style="min-width:0"><h2>Las tablas</h2><div class="tlist">${TABLES.map(([k,l,d])=>`<div class="tcard"><span class="cnt">${(C[k]||0).toLocaleString('es-CL')}</span><div class="nm">${k}</div><div class="layer">${l}</div><p>${d}</p></div>`).join('')}</div></div>
+   <div style="min-width:0" class="right"><h2>Las tablas</h2><div class="tlist">${TABLES.map(([k,l,d])=>`<div class="tcard"><span class="cnt">${(C[k]||0).toLocaleString('es-CL')}</span><div class="nm">${k}</div><div class="layer">${l}</div><p>${d}</p></div>`).join('')}</div></div>
   </div>`}
 
 /* ---------- tabs y arranque ---------- */
